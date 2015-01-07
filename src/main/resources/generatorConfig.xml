@@ -5,7 +5,7 @@
     <!-- <classPathEntry location="C:\mywork\maven\maven-repos\postgresql\postgresql\9.1-901-1.jdbc4\postgresql-9.1-901-1.jdbc4.jar" 
         /> -->
     <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-    <!--  <classPathEntry location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>  -->
+     <!-- <classPathEntry location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>  --> 
     <context id="context1" targetRuntime="MyBatis3">
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
@@ -15,6 +15,7 @@
         </plugin>
         <plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
         <plugin type="com.generator.plugin.MysqlPagingPlugin" />
+        <plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
         <plugin type="com.generator.plugin.CommentPlugin">
             <!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
             <!--<property name="modelClassAuthor" value="xianwen.tan" />-->
@@ -34,21 +35,27 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.krplus.message.model" targetProject="krplus-service">
+        <javaModelGenerator targetPackage="com.krplus.finance.model" targetProject="krplus-service">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="krplus-service"/>
+        <sqlMapGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service"/>
 <!--         <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
 
-        <javaClientGenerator targetPackage="com.krplus.message.mapper" targetProject="krplus-service" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service" type="XMLMAPPER"/>
 
-        <table tableName="inmail" domainObjectName="Inmail2">
+       <!--  <table tableName="inmail" domainObjectName="Inmail2">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="Name" property="cityName"></columnOverride>
+            <columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride>
+            <ignoreColumn column="read"/> 
+        </table> -->
+        <table tableName="company_finance" domainObjectName="CompanyFinance">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <!--<columnOverride column="Name" property="cityName"></columnOverride>-->
             <!--<columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride>-->
-            <!--<ignoreColumn column="Population"/>-->
+           <!--  <ignoreColumn column="read"/>  -->
         </table>
 
     </context>
