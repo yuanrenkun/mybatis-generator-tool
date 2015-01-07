@@ -5,7 +5,7 @@
     <!-- <classPathEntry location="C:\mywork\maven\maven-repos\postgresql\postgresql\9.1-901-1.jdbc4\postgresql-9.1-901-1.jdbc4.jar" 
         /> -->
     <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-     <!-- <classPathEntry location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>  --> 
+    <!-- <classPathEntry location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>  -->  
     <context id="context1" targetRuntime="MyBatis3">
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
@@ -53,6 +53,7 @@
         </table> -->
         <table tableName="company_finance" domainObjectName="CompanyFinance">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+           <!-- <columnOverride column="phase" javaType="com.shanren.controller.MyEnum"></columnOverride> -->
             <!--<columnOverride column="Name" property="cityName"></columnOverride>-->
             <!--<columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride>-->
            <!--  <ignoreColumn column="read"/>  -->

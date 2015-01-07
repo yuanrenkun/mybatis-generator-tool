@@ -23,8 +23,9 @@ public class TinyintToIntegerPlugin extends PluginAdapter {
 		List<IntrospectedColumn> list = intrp.getAllColumns();
 		if (null != list) {
 			for (IntrospectedColumn col : list) {
-				if (col.getJdbcTypeName().equalsIgnoreCase("TINYINT")) {
-					col.setFullyQualifiedJavaType(new FullyQualifiedJavaType("java.lang.Integer"));
+				if (col.getJdbcTypeName().equalsIgnoreCase("TINYINT")
+						&& col.getFullyQualifiedJavaType().getFullyQualifiedName().equals(Byte.class.getName())) {
+					col.setFullyQualifiedJavaType(new FullyQualifiedJavaType(Integer.class.getName()));
 				}
 			}
 		}
