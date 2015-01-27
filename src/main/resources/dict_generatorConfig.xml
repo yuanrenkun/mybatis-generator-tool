@@ -7,7 +7,8 @@
 	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
 	<classPathEntry
 		location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
-	<context id="context1" targetRuntime="MyBatis3">
+	<context id="context1" targetRuntime="MyBatis3"
+		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
 		<property name="javaFileEncoding" value="UTF-8" />
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
 		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
@@ -34,25 +35,29 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-		<javaModelGenerator targetPackage="com.krplus.common.dictionary.model"
+		<javaModelGenerator targetPackage="com.krplus.common.dictionary.modelxxx"
 			targetProject="krplus-common-dictionary">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.krplus.common.dictionary.mapper"
+		<sqlMapGenerator targetPackage="com.krplus.common.dictionary.mapperxxx"
 			targetProject="krplus-common-dictionary" />
 
-		<javaClientGenerator targetPackage="com.krplus.common.dictionary.mapper"
+		<javaClientGenerator targetPackage="com.krplus.common.dictionary.mapperxxx"
 			targetProject="krplus-common-dictionary" type="XMLMAPPER" />
 
 
-		 <table tableName="dict_area" domainObjectName="DictArea">
-		</table> 
-		<!--
-		<table tableName="dict_school" domainObjectName="DictSchool">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table> -->
+		<table tableName="dict_area" domainObjectName="DictArea">
+			<columnOverride column="feature">
+				<property name="forceInBlobModel" value="true" />
+			</columnOverride>
+			<columnOverride column="code">
+				<property name="forceInBlobModel" value="true" />
+			</columnOverride>
+		</table>
+		<!-- <table tableName="dict_school" domainObjectName="DictSchool"> <generatedKey 
+			column="id" identity="true" sqlStatement="mysql" /> </table> -->
 
 	</context>
 </generatorConfiguration>
