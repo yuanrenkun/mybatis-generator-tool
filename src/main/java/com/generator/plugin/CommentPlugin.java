@@ -84,14 +84,4 @@ public class CommentPlugin extends PluginAdapter {
         }
 
     }
-
-    public static void generate() {
-        String config = CommentPlugin.class.getClassLoader().getResource("generatorConfig.xml").getFile();
-        String[] arg = { "-configfile", config, "-overwrite" };
-        ShellRunner.main(arg);
-    }
-
-    public static void main(String[] args) {
-        generate();
-    }
 }
