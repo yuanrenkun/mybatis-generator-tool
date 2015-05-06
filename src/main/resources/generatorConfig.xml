@@ -2,8 +2,6 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-	<!-- <classPathEntry location="C:\mywork\maven\maven-repos\postgresql\postgresql\9.1-901-1.jdbc4\postgresql-9.1-901-1.jdbc4.jar" 
-		/> -->
 	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
 	<classPathEntry
 		location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
@@ -34,130 +32,16 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-<!-- 		<javaModelGenerator targetPackage="com.krplus.tag.model" -->
-	 	<javaModelGenerator targetPackage="com.krplus.finance.model" 
-			targetProject="krplus-service">
+	 	<javaModelGenerator targetPackage="com.krplus.finance.model" targetProject="krplus-service">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-<!-- 		<sqlMapGenerator targetPackage="com.krplus.tag.mapper" -->
-		<sqlMapGenerator targetPackage="com.krplus.finance.mapper"
-			targetProject="krplus-service" />
-		<!-- <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
+		<sqlMapGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service" />
 
-		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
- 		<javaClientGenerator targetPackage="com.krplus.finance.mapper" 
-			targetProject="krplus-service" type="XMLMAPPER" />
+ 		<javaClientGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service" type="XMLMAPPER" />
 
-		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
-			column="id" identity="true" sqlStatement="mysql"/> <columnOverride column="Name" 
-			property="cityName"></columnOverride> <columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride> 
-			<ignoreColumn column="read"/> </table> -->
-<!--		<table tableName="company_investor" domainObjectName="CompanyInvestor">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-		</table>
-		<table tableName="tag" domainObjectName="Tag">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
- 		<table tableName="company_finance" domainObjectName="CompanyFinance">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-		</table>
-		
-		
-		 -->
-		
-		<!-- 
-		<table tableName="company_investor_temp" domainObjectName="CompanyInvestorTemp">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
-		</table>
-		<table tableName="company_finance_entity_temp" domainObjectName="CompanyFinanceEntityTemp">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="status"
-				javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-		</table>
-		
-		<table tableName="user_invest_entity" domainObjectName="UserInvestEntity">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
-		</table> -->
-	<!-- 	<table tableName="user_invest_entity" domainObjectName="UserInvestEntity">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-		</table> 
-		
-		
-		<table tableName="company_finance_temp" domainObjectName="CompanyFinanceTemp">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-		</table>
-		
-		
-		
-		
-		 
-		 <table tableName="company_finance" domainObjectName="CompanyFinance">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-		</table>
-		<table tableName="company_finance_entity" domainObjectName="CompanyFinanceEntity">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="status"
-				javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-		</table>
-		 <table tableName="user_invest_experience" domainObjectName="UserInvestExperience">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="total_invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-		</table> 
-		<table tableName="user_delegate_investor" domainObjectName="UserDelegateInvestor">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="status"
-				javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-			<ignoreColumn column="finance_event_id"/>
-		</table>
-		<table tableName="finance_event_detail" domainObjectName="FinanceEventDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="status"
-				javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-			<ignoreColumn column="invest_value_unit"/>
-			<ignoreColumn column="invest_value"/>
-		</table>
-		
-		
-		<table tableName="company_detail" domainObjectName="CompanyDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-		 <table tableName="finance_event" domainObjectName="FinanceEvent">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-		</table>
-		 -->
+		<!-- list all tables here-->
 		<table tableName="company_funds" domainObjectName="CompanyFunds">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="phase" javaType="com.krplus.enums.FundsPhase"></columnOverride>
