@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
+import org.mybatis.generator.api.ShellRunner;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.java.JavaVisibility;
@@ -111,5 +112,15 @@ public class MysqlPagingPlugin extends PluginAdapter {
 	 */
 	public boolean validate(List<String> warnings) {
 		return true;
+	}
+
+	public static void generate() {
+		String config = MysqlPagingPlugin.class.getClassLoader().getResource("myGeneratorConfig.xml").getFile();
+		String[] arg = { "-configfile", config, "-overwrite" };
+		ShellRunner.main(arg);
+	}
+
+	public static void main(String[] args) {
+		generate();
 	}
 }
