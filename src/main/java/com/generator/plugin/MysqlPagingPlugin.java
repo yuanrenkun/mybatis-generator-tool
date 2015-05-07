@@ -115,7 +115,7 @@ public class MysqlPagingPlugin extends PluginAdapter {
 	}
 
 	public static void generate() {
-		String config = MysqlPagingPlugin.class.getClassLoader().getResource("generatorConfig.xml").getFile();
+		String config = MysqlPagingPlugin.class.getClassLoader().getResource("myGeneratorConfig.xml").getFile();
 		String[] arg = { "-configfile", config, "-overwrite" };
 		ShellRunner.main(arg);
 	}
