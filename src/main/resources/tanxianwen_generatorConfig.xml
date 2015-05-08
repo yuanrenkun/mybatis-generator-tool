@@ -158,7 +158,6 @@
 			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
 			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
 		</table>
-		 -->
 		<table tableName="company_funds" domainObjectName="CompanyFunds">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="phase" javaType="com.krplus.enums.FundsPhase"></columnOverride>
@@ -166,6 +165,32 @@
 			<columnOverride column="invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
 			<columnOverride column="status"	javaType="com.krplus.enums.FundsStatus"></columnOverride>
 		    <columnOverride column="type" javaType="com.krplus.enums.FundsType"></columnOverride>
+		</table>
+		 -->
+		<table tableName="past_invest_detail" domainObjectName="PastInvestDetail">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
+			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
+			<columnOverride column="invest_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+		</table>
+		<table tableName="past_investor" domainObjectName="PastInvestor">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
+			<columnOverride column="status"	javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
+			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
+		</table>
+		<table tableName="past_finance" domainObjectName="PastFinance">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
+			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="finance_channel" javaType="com.krplus.enums.FinanceChannel"></columnOverride>
+		</table>
+		<table tableName="past_finance_participant" domainObjectName="PastFinanceParticipant">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
 		</table>
 	</context>
 </generatorConfiguration>
