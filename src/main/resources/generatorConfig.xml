@@ -48,20 +48,18 @@
             <columnOverride column="industry" javaType="com.krplus.enums.industry.CompanyIndustry"></columnOverride>
             <columnOverride column="finance_phase" javaType="com.krplus.enums.CompanyFinancePhase"></columnOverride>
             <columnOverride column="status" javaType="com.krplus.enums.CompanyStatus"></columnOverride>
-            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"
-                            typeHandler="com.krplus.common.framework.mybatis.EnumValueTypeHandler"></columnOverride>
-            <columnOverride column="operation_status"
-                            javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"></columnOverride>
+            <columnOverride column="operation_status" javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
         </table>
-         <table tableName="company_audit" domainObjectName="CompanyAudit">
+        <table tableName="company_audit" domainObjectName="CompanyAudit">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="status" javaType="com.krplus.enums.AuditStatus" />
-            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource" />
+            <columnOverride column="status" javaType="com.krplus.enums.AuditStatus"/>
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"/>
         </table>
-         <table tableName="company_product" domainObjectName="CompanyProduct">
+        <table tableName="company_product" domainObjectName="CompanyProduct">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-         <table tableName="company_tag" domainObjectName="CompanyTag"></table>
+        <table tableName="company_tag" domainObjectName="CompanyTag"></table>
 
         <table tableName="company_funds">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
