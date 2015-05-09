@@ -2,53 +2,76 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-	<classPathEntry
-		location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
-	<context id="context1" targetRuntime="MyBatis3" introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
-		<property name="javaFileEncoding" value="UTF-8" />
-		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
-		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-			<property name="searchString" value="Example$" />
-			<property name="replaceString" value="Condition" />
-		</plugin>
-		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
-		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
-		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
-		<plugin type="com.generator.plugin.CommentPlugin">
-			<!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
-			<!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
-		</plugin>
+    <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
+    <!--<classPathEntry-->
+    <!--location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>-->
+    <context id="context1" targetRuntime="MyBatis3" introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Condition"/>
+        </plugin>
+        <plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin"/>
+        <plugin type="com.generator.plugin.MysqlPagingPlugin"/>
+        <plugin type="com.generator.plugin.TinyintToIntegerPlugin"/>
+        <plugin type="com.generator.plugin.CommentPlugin">
+            <!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
+            <!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
+        </plugin>
 
-		<commentGenerator>
-			<!-- 不生成原生的注解信息 -->
-			<property name="suppressAllComments" value="true" />
-		</commentGenerator>
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://dev03/krplus2" userId="dev"
-			password="UflEyGJeJX9j6TJmXVPS" />
+        <commentGenerator>
+            <!-- 不生成原生的注解信息 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://dev04/krplus2" userId="dev"
+                        password="UflEyGJeJX9j6TJmXVPS"/>
 
-		<javaTypeResolver>
-			<property name="forceBigDecimals" value="false" />
-		</javaTypeResolver>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
 
-	 	<javaModelGenerator targetPackage="com.krplus.finance.model" targetProject="krplus-service">
-			<property name="enableSubPackages" value="true" />
-			<property name="trimStrings" value="true" />
-		</javaModelGenerator>
+        <javaModelGenerator targetPackage="com.krplus.company.model" targetProject="krplus-service/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service" />
+        <sqlMapGenerator targetPackage="com.krplus.company.mapper" targetProject="krplus-service/src/main/java"/>
 
- 		<javaClientGenerator targetPackage="com.krplus.finance.mapper" targetProject="krplus-service" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="com.krplus.company.mapper" targetProject="krplus-service/src/main/java"
+                             type="XMLMAPPER"/>
 
-		<!-- list all tables here-->
-		<table tableName="company_funds" domainObjectName="CompanyFunds">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FundsPhase"></columnOverride>
-			<columnOverride column="fund_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status"	javaType="com.krplus.enums.FundsStatus"></columnOverride>
-		    <columnOverride column="type" javaType="com.krplus.enums.FundsType"></columnOverride>
-		</table>
-	</context>
+        <!-- list all tables here-->
+        <table tableName="company">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="industry" javaType="com.krplus.enums.industry.CompanyIndustry"></columnOverride>
+            <columnOverride column="finance_phase" javaType="com.krplus.enums.CompanyFinancePhase"></columnOverride>
+            <columnOverride column="status" javaType="com.krplus.enums.CompanyStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"
+                            typeHandler="com.krplus.common.framework.mybatis.EnumValueTypeHandler"></columnOverride>
+            <columnOverride column="operation_status"
+                            javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
+        </table>
+         <table tableName="company_audit" domainObjectName="CompanyAudit">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.krplus.enums.AuditStatus" />
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource" />
+        </table>
+         <table tableName="company_product" domainObjectName="CompanyProduct">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+         <table tableName="company_tag" domainObjectName="CompanyTag"></table>
+
+        <table tableName="company_funds">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="phase" javaType="com.krplus.enums.FundsPhase"></columnOverride>
+            <columnOverride column="fund_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="status" javaType="com.krplus.enums.FundsStatus"></columnOverride>
+            <columnOverride column="type" javaType="com.krplus.enums.FundsType"></columnOverride>
+        </table>
+        <table tableName="company_profile">
+        </table>
+    </context>
 </generatorConfiguration>
