@@ -166,15 +166,6 @@
 			<columnOverride column="status"	javaType="com.krplus.enums.FundsStatus"></columnOverride>
 		    <columnOverride column="type" javaType="com.krplus.enums.FundsType"></columnOverride>
 		</table>
-		 -->
-		<table tableName="past_invest_detail" domainObjectName="PastInvestDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="invest_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-		</table>
 		<table tableName="past_investor" domainObjectName="PastInvestor">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
@@ -192,5 +183,15 @@
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
 		</table>
+		 -->
+		<table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
+			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
+			<columnOverride column="invest_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+		</table>
+		
 	</context>
 </generatorConfiguration>
