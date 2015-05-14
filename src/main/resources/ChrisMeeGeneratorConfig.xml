@@ -14,10 +14,8 @@
 		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
 		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
 		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
-		<plugin type="com.generator.plugin.CommentPlugin">
-			<!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
-			<!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
-		</plugin>
+		<plugin type="com.generator.plugin.CommentPlugin" />
+		<plugin type="com.generator.plugin.ShardPlugin" />
 
 		<commentGenerator>
 			<!-- 不生成原生的注解信息 -->
@@ -45,6 +43,9 @@
 		<table tableName="feed" domainObjectName="Feed">
 			<!-- <generatedKey column="feed_id" identity="true" sqlStatement="mysql" 
 				/> -->
+		</table>
+		<table tableName="user_mini_feed" domainObjectName="UserMiniFeed">
+			<property name="shardBy" value="uid" />
 		</table>
 
 	</context>
