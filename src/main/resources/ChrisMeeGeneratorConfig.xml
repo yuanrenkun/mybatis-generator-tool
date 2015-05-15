@@ -47,6 +47,12 @@
 		<table tableName="user_mini_feed" domainObjectName="UserMiniFeed">
 			<property name="shardBy" value="uid" />
 		</table>
+		<table tableName="company_mini_feed" domainObjectName="CompanyMiniFeed">
+			<property name="shardBy" value="cid" />
+		</table>
+		<table tableName="user_feed" domainObjectName="UserFeed">
+			<property name="shardBy" value="uid" />
+		</table>
 
 	</context>
 </generatorConfiguration>
