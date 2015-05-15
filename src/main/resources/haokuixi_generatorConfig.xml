@@ -45,10 +45,8 @@
             <columnOverride column="industry" javaType="com.krplus.enums.industry.CompanyIndustry"></columnOverride>
             <columnOverride column="finance_phase" javaType="com.krplus.enums.CompanyFinancePhase"></columnOverride>
             <columnOverride column="status" javaType="com.krplus.enums.CompanyStatus"></columnOverride>
-            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"
-                            typeHandler="com.krplus.common.framework.mybatis.EnumValueTypeHandler"></columnOverride>
-            <columnOverride column="operation_status"
-                            javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"></columnOverride>
+            <columnOverride column="operation_status" javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
         </table>
         <!-- <table tableName="dict_area" domainObjectName="DictArea">
             <columnOverride column="feature">
