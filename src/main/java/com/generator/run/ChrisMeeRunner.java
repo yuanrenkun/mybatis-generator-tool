@@ -10,7 +10,7 @@ import org.mybatis.generator.api.ShellRunner;
 public class ChrisMeeRunner {
     public static void main(String[] args) {
         String config = ChrisMeeRunner.class.getClassLoader().getResource("ChrisMeeGeneratorConfig.xml").getFile();
-        String[] arg = { "-configfile", config, "-overwrite", "-verbose", "-tables", "user_feed" };
+        String[] arg = { "-configfile", config, "-overwrite", "-verbose", "-tables", "company_mini_feed" };
         ShellRunner.main(arg);
     }
 }
