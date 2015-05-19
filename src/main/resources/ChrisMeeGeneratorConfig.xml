@@ -40,6 +40,8 @@
 		<javaClientGenerator targetPackage="com.krplus.feed.mapper"
 			targetProject="/Users/mcc/Downloads/feed" type="XMLMAPPER" />
 
+		<table tableName="feed_template" domainObjectName="FeedTemplate">
+		</table>
 		<table tableName="feed" domainObjectName="Feed">
 			<!-- <generatedKey column="feed_id" identity="true" sqlStatement="mysql" 
 				/> -->

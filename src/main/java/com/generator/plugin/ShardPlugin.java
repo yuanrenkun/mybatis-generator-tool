@@ -7,6 +7,8 @@ import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.config.TableConfiguration;
 
+import com.mysql.jdbc.StringUtils;
+
 /**
  * 类上添加散表字段
  * 
@@ -23,11 +25,13 @@ public class ShardPlugin extends PluginAdapter {
     public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
         TableConfiguration tc = introspectedTable.getTableConfiguration();
         String shardKey = tc.getProperty("shardBy");
-        StringBuffer sb = new StringBuffer();
-        sb.append("@ShardBy(\"").append(shardKey).append("\")");
-        topLevelClass.addAnnotation(sb.toString());
-        // @ShardBy注解可以作为基本类型并入common-util, 此处不进行引入强制
-        topLevelClass.addImportedType("");
+        if (!StringUtils.isEmptyOrWhitespaceOnly(shardKey)) {
+            StringBuffer sb = new StringBuffer();
+            sb.append("@ShardBy(\"").append(shardKey).append("\")");
+            topLevelClass.addAnnotation(sb.toString());
+            // @ShardBy注解可以作为基本类型并入common-util, 此处不进行引入强制
+            topLevelClass.addImportedType("");
+        }
         return true;
     }
 }
