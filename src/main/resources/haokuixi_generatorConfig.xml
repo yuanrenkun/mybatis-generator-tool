@@ -3,7 +3,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-    <context id="context1" targetRuntime="MyBatis3" introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+    <context id="context1" targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+             introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
         <property name="javaFileEncoding" value="UTF-8"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
