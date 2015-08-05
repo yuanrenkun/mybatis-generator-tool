@@ -81,5 +81,10 @@
             <generatedKey column="id" sqlStatement="mysql" identity="true"/>
             <columnOverride column="report_angle" javaType="com.krplus.report.enums.NewsReportAngle"/>
         </table>
+        
+        <table tableName="company_funds_permission" domainObjectName="CompanyFundsPermi">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="status" javaType="com.krplus.enums.FundPermissionStatus"></columnOverride>
+		</table> 
     </context>
 </generatorConfiguration>
