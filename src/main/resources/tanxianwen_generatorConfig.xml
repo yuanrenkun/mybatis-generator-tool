@@ -36,19 +36,19 @@
 		</javaTypeResolver>
 
 <!-- 		<javaModelGenerator targetPackage="com.krplus.tag.model" -->
-	 	<javaModelGenerator targetPackage="com.kr.rong.model.finance" 
+	 	<javaModelGenerator targetPackage="com.kr.rong.model.speed" 
 			targetProject="krplus-service">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 <!-- 		<sqlMapGenerator targetPackage="com.krplus.tag.mapper" -->
-		<sqlMapGenerator targetPackage="com.kr.rong.mapper.finance"
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.speed"
 			targetProject="krplus-service" />
 		<!-- <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
- 		<javaClientGenerator targetPackage="com.kr.rong.mapper.finance" 
+ 		<javaClientGenerator targetPackage="com.kr.rong.mapper.speed" 
 			targetProject="krplus-service" type="XMLMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
@@ -64,15 +64,6 @@
 		<table tableName="tag" domainObjectName="Tag">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
- 		<table tableName="company_finance" domainObjectName="CompanyFinance">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="estimate_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-		</table>
-		
-		
 		 -->
 		
 		<!-- 
@@ -109,7 +100,6 @@
             <columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
             <columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
         </table>
-		 -->
 		 <table tableName="company_funds" domainObjectName="CompanyFunds">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
@@ -119,5 +109,35 @@
 		    <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
 		    <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
 		</table>
+		 
+		<table tableName="speed_funds" domainObjectName="SpeedFunds">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <ignoreColumn column="fund_id"/>
+            <ignoreColumn column="is_closed"/>
+            <ignoreColumn column="is_converted"/>
+        </table>
+		<table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="status"	javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
+        </table>
+        <table tableName="speed_bp_post" domainObjectName="SpeedBpPost">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.kr.rong.enums.speed.SpeedBpPostStatus" />
+            <columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+            <ignoreColumn column="fund_id"/>
+        </table>
+        <table tableName="speed_quick_reply" domainObjectName="SpeedQuickReply">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.speed.SpeedQuickReplyType"></columnOverride>
+        </table>
+		 -->
+        <table tableName="speed_investor" domainObjectName="SpeedInvestor">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <ignoreColumn column="display_order"/>
+        </table>
+		 
 	</context>
 </generatorConfiguration>
