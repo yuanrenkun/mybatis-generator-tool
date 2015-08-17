@@ -116,13 +116,6 @@
             <ignoreColumn column="is_closed"/>
             <ignoreColumn column="is_converted"/>
         </table>
-		<table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
-            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
-			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status"	javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
-        </table>
         <table tableName="speed_bp_post" domainObjectName="SpeedBpPost">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="status" javaType="com.kr.rong.enums.speed.SpeedBpPostStatus" />
@@ -133,11 +126,19 @@
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="type" javaType="com.kr.rong.enums.speed.SpeedQuickReplyType"></columnOverride>
         </table>
-		 -->
         <table tableName="speed_investor" domainObjectName="SpeedInvestor">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <ignoreColumn column="display_order"/>
         </table>
+		 -->
 		 
+		<table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="status"	javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
+            <ignoreColumn column="invest_value_unit"/>
+            <ignoreColumn column="invest_value"/>
+        </table>
 	</context>
 </generatorConfiguration>
