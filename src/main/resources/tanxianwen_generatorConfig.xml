@@ -36,19 +36,19 @@
 		</javaTypeResolver>
 
 <!-- 		<javaModelGenerator targetPackage="com.krplus.tag.model" -->
-	 	<javaModelGenerator targetPackage="com.kr.rong.model.speed" 
+	 	<javaModelGenerator targetPackage="com.kr.rong.model.finance" 
 			targetProject="krplus-service">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 <!-- 		<sqlMapGenerator targetPackage="com.krplus.tag.mapper" -->
-		<sqlMapGenerator targetPackage="com.kr.rong.mapper.speed"
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.finance"
 			targetProject="krplus-service" />
 		<!-- <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
- 		<javaClientGenerator targetPackage="com.kr.rong.mapper.speed" 
+ 		<javaClientGenerator targetPackage="com.kr.rong.mapper.finance" 
 			targetProject="krplus-service" type="XMLMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
@@ -77,14 +77,6 @@
 		<table tableName="past_finance_participant" domainObjectName="PastFinanceParticipant">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-		</table>
-		<table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="invest_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
 		</table>
 		<table tableName="past_investor" domainObjectName="PastInvestor">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
@@ -130,8 +122,6 @@
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <ignoreColumn column="display_order"/>
         </table>
-		 -->
-		 
 		<table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
 			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
@@ -140,5 +130,16 @@
             <ignoreColumn column="invest_value_unit"/>
             <ignoreColumn column="invest_value"/>
         </table>
+		 -->
+		 
+		<table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="entity_type" javaType="com.kr.rong.enums.EntityType"></columnOverride>
+			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FinancePhase"></columnOverride>
+			<columnOverride column="invest_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="finance_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="valuation_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="invest_role" javaType="com.kr.rong.enums.finance.ParticipateInvestRole"></columnOverride>
+		</table>
 	</context>
 </generatorConfiguration>
