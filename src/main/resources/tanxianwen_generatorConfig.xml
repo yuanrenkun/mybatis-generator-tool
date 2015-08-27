@@ -36,19 +36,19 @@
 		</javaTypeResolver>
 
 <!-- 		<javaModelGenerator targetPackage="com.krplus.tag.model" -->
-	 	<javaModelGenerator targetPackage="com.kr.rong.model.finance" 
+	 	<javaModelGenerator targetPackage="com.kr.rong.model.company" 
 			targetProject="krplus-service">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 <!-- 		<sqlMapGenerator targetPackage="com.krplus.tag.mapper" -->
-		<sqlMapGenerator targetPackage="com.kr.rong.mapper.finance"
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.company"
 			targetProject="krplus-service" />
 		<!-- <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
- 		<javaClientGenerator targetPackage="com.kr.rong.mapper.finance" 
+ 		<javaClientGenerator targetPackage="com.kr.rong.mapper.company" 
 			targetProject="krplus-service" type="XMLMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
@@ -84,14 +84,6 @@
 			<columnOverride column="status"	javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
 			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
 		</table>
-		 <table tableName="company" domainObjectName="Company">
-            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
-            <columnOverride column="finance_phase" javaType="com.kr.rong.enums.finance.CompanyFinancePhase"></columnOverride>
-            <columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
-            <columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
-            <columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
-        </table>
 		 <table tableName="company_funds" domainObjectName="CompanyFunds">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
@@ -130,7 +122,6 @@
             <ignoreColumn column="invest_value_unit"/>
             <ignoreColumn column="invest_value"/>
         </table>
-		 -->
 		 
 		<table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
@@ -141,5 +132,21 @@
 			<columnOverride column="valuation_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
 			<columnOverride column="invest_role" javaType="com.kr.rong.enums.finance.ParticipateInvestRole"></columnOverride>
 		</table>
+		<table tableName="user_privilege" domainObjectName="UserPrivilege">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="fa_company_binding" domainObjectName="FaCompanyBinding">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FaBindingStatus"></columnOverride>
+		</table>
+		 -->
+		 <table tableName="company" domainObjectName="Company">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
+            <columnOverride column="finance_phase" javaType="com.kr.rong.enums.finance.CompanyFinancePhase"></columnOverride>
+            <columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
+            <columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
+        </table>
 	</context>
 </generatorConfiguration>
