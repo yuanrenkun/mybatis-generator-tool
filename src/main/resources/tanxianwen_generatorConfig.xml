@@ -36,19 +36,19 @@
 		</javaTypeResolver>
 
 <!-- 		<javaModelGenerator targetPackage="com.krplus.tag.model" -->
-	 	<javaModelGenerator targetPackage="com.kr.rong.model.company" 
+	 	<javaModelGenerator targetPackage="com.kr.rong.model.finance" 
 			targetProject="krplus-service">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 <!-- 		<sqlMapGenerator targetPackage="com.krplus.tag.mapper" -->
-		<sqlMapGenerator targetPackage="com.kr.rong.mapper.company"
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.finance"
 			targetProject="krplus-service" />
 		<!-- <sqlMapGenerator targetPackage="com.krplus.message.mapper" targetProject="/Users/hainan.wang/company/code/temp/"/> -->
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
- 		<javaClientGenerator targetPackage="com.kr.rong.mapper.company" 
+ 		<javaClientGenerator targetPackage="com.kr.rong.mapper.finance" 
 			targetProject="krplus-service" type="XMLMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
@@ -83,15 +83,6 @@
 			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
 			<columnOverride column="status"	javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
 			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-		</table>
-		 <table tableName="company_funds" domainObjectName="CompanyFunds">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
-			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status"	javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
-		    <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
-		    <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
 		</table>
 		 
 		<table tableName="speed_funds" domainObjectName="SpeedFunds">
@@ -139,7 +130,6 @@
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FaBindingStatus"></columnOverride>
 		</table>
-		 -->
 		 <table tableName="company" domainObjectName="Company">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
@@ -148,5 +138,15 @@
             <columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
             <columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
         </table>
+		 -->
+		  <table tableName="company_funds" domainObjectName="CompanyFunds">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+			<columnOverride column="status"	javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
+		    <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
+		    <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
+		</table>
 	</context>
 </generatorConfiguration>
