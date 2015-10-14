@@ -33,16 +33,16 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-	 	<javaModelGenerator targetPackage="com.kr.x.model.fa" 
+	 	<javaModelGenerator targetPackage="com.kr.x.model.user" 
 			targetProject="kr-x">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.kr.x.mapper.fa" 
+		<sqlMapGenerator targetPackage="com.kr.x.mapper.user" 
 			targetProject="kr-x" />
 
- 		<javaClientGenerator targetPackage="com.kr.x.mapper.fa" 
+ 		<javaClientGenerator targetPackage="com.kr.x.mapper.user" 
 			targetProject="kr-x" type="XMLMAPPER" />
 
 		<!-- 
@@ -55,8 +55,11 @@
 		    <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
 		    <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
 		</table>
-		 -->
 		  <table tableName="fa_white_list" domainObjectName="FaWhiteList">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		 -->
+		  <table tableName="x_user" domainObjectName="XUser">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
 	</context>
