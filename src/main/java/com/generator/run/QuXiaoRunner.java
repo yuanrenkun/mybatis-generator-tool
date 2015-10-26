@@ -10,7 +10,7 @@ import org.mybatis.generator.api.ShellRunner;
 public class QuXiaoRunner {
     public static void main(String[] args) {
         String config = QuXiaoRunner.class.getClassLoader().getResource("quxiao_generatorConfig.xml").getFile();
-        String[] arg = { "-configfile", config, "-overwrite", "-verbose", "-tables", "operator" };
+        String[] arg = { "-configfile", config, "-overwrite", "-verbose", "-tables", "company" };
         ShellRunner.main(arg);
     }
 }
