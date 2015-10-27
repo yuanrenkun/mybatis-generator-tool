@@ -57,8 +57,6 @@
 			<columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride> 
 			</table> <table tableName="fa_white_list" domainObjectName="FaWhiteList"> 
 			<generatedKey column="id" identity="true" sqlStatement="mysql" /> </table> 
-			<table tableName="x_user" domainObjectName="XUser"> <generatedKey column="id" 
-			identity="true" sqlStatement="mysql" /> </table> -->
 		<table tableName="x_permission" domainObjectName="XPermission">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="role" javaType="com.kr.x.enums.XRole"></columnOverride> 
@@ -70,5 +68,9 @@
 		<table tableName="x_resource" domainObjectName="XResource">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
+		-->
+		<table tableName="x_user" domainObjectName="XUser"> <generatedKey column="id" 
+			identity="true" sqlStatement="mysql" /> 
+		</table> 
 	</context>
 </generatorConfiguration>
