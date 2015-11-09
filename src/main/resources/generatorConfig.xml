@@ -26,21 +26,21 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://dev04/krplus2" userId="dev"
-                        password="UflEyGJeJX9j6TJmXVPS"/>
+                        connectionURL="jdbc:mysql://db1.test/krplus2" userId="krplus"
+                        password="MUe0glR9XjnYfLn5"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.krplus.misc.model" targetProject="krplus-service/src/main/java">
+        <javaModelGenerator targetPackage="com.kr.rong.model.activity.wise" targetProject="krplus-service/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.krplus.misc.mapper" targetProject="krplus-service/src/main/java"/>
+        <sqlMapGenerator targetPackage="com.kr.rong.mapper.activity.wise" targetProject="krplus-service/src/main/java"/>
 
-        <javaClientGenerator targetPackage="com.krplus.misc.mapper" targetProject="krplus-service/src/main/java"
+        <javaClientGenerator targetPackage="com.kr.rong.mapper.activity.wise" targetProject="krplus-service/src/main/java"
                              type="XMLMAPPER"/>
 
         <!-- list all tables here-->
@@ -71,6 +71,24 @@
             <columnOverride column="type" javaType="com.krplus.enums.FundsType"/>
         </table>
         <table tableName="company_profile"/>
+
+        <table tableName="company_access_rank" domainObjectName="CompanyAccessRank">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyAccessRankTypeEnum"/>
+        </table>
+
+        <table tableName="company_event" domainObjectName="CompanyEvent">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+
+        <table tableName="company_event_record" domainObjectName="CompanyEventRecord">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="company_intention" domainObjectName="CompanyIntention">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyIntentionTypeEnum"/>
+        </table>
+
         <table tableName="visit">
             <generatedKey column="id" sqlStatement="mysql" identity="true"/>
             <columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"/>
@@ -81,10 +99,59 @@
             <generatedKey column="id" sqlStatement="mysql" identity="true"/>
             <columnOverride column="report_angle" javaType="com.krplus.report.enums.NewsReportAngle"/>
         </table>
-        
+
         <table tableName="company_funds_permission" domainObjectName="CompanyFundsPermi">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="status" javaType="com.krplus.enums.FundPermissionStatus"></columnOverride>
 		</table> 
+        <table tableName="user_privilege" domainObjectName="UserPrivilege">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="user" domainObjectName="User">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_display_weixin" javaType="java.lang.Boolean"/>
+            <columnOverride column="is_email_activate" javaType="java.lang.Boolean"/>
+            <columnOverride column="coinvestor_type" javaType="com.kr.rong.enums.CoinvestorType"/>
+            <columnOverride column="lead_investor_type" javaType="com.kr.rong.enums.LeadInvestorType"/>
+        </table>
+        <!--创业服务 begin-->
+        <table tableName="service_provider" domainObjectName="ServiceProvider">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+
+        <table tableName="service_item_module_sub" domainObjectName="ServiceItemModuleSub">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+
+        <table tableName="service_item_module" domainObjectName="ServiceItemModule">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_default" javaType="java.lang.Boolean"/>
+            <columnOverride column="sort_weight" javaType="java.lang.Float"/>
+        </table>
+
+        <table tableName="service_item_consult_record" domainObjectName="ServiceItemConsultRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_item_city" domainObjectName="ServiceItemCity">
+        </table>
+
+        <table tableName="service_item" domainObjectName="ServiceItem">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+
+        <table tableName="service_comment" domainObjectName="ServiceComment">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_anonymous" javaType="java.lang.Boolean"/>
+        </table>
+
+        <table tableName="service_catalog" domainObjectName="ServiceCatalog">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <!--创业服务 end-->
+
+        <table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_verified" javaType="java.lang.Boolean"/>
+        </table>
     </context>
 </generatorConfiguration>
