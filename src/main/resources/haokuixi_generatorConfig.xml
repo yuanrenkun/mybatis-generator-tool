@@ -42,14 +42,6 @@
         <javaClientGenerator targetPackage="com.krplus.company.mapper" targetProject="/Users/mcc/Downloads/krplus-service/src/main/java"
                              type="XMLMAPPER"/>
 
-        <table tableName="company" domainObjectName="Company">
-            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="industry" javaType="com.krplus.enums.industry.CompanyIndustry"></columnOverride>
-            <columnOverride column="finance_phase" javaType="com.krplus.enums.CompanyFinancePhase"></columnOverride>
-            <columnOverride column="status" javaType="com.krplus.enums.CompanyStatus"></columnOverride>
-            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"></columnOverride>
-            <columnOverride column="operation_status" javaType="com.krplus.enums.CompanyOperationStatus"></columnOverride>
-        </table>
         <!-- <table tableName="dict_area" domainObjectName="DictArea">
             <columnOverride column="feature">
                 <property name="forceInBlobModel" value="true" />
@@ -67,14 +59,6 @@
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table> -->
         <!-- <table tableName="company_tag" domainObjectName="CompanyTag"></table> -->
-        <!--<table tableName="company_funds" domainObjectName="CompanyFunds">
-            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="phase" javaType="com.krplus.enums.FundsPhase"></columnOverride>
-            <columnOverride column="fund_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-            <columnOverride column="invest_value_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-            <columnOverride column="status" javaType="com.krplus.enums.FundsStatus"></columnOverride>
-            <columnOverride column="type" javaType="com.krplus.enums.FundsType"></columnOverride>
-        </table>-->
         <!--<table tableName="speed_funds" domainObjectName="SpeedFunds">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>-->
