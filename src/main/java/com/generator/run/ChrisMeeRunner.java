@@ -4,13 +4,14 @@ import org.mybatis.generator.api.ShellRunner;
 
 /**
  * 运行默认的配置文件
- * @author tanxianwen 
- * 2015年4月29日
+ * 
+ * @author tanxianwen 2015年4月29日
  */
 public class ChrisMeeRunner {
     public static void main(String[] args) {
         String config = ChrisMeeRunner.class.getClassLoader().getResource("ChrisMeeGeneratorConfig.xml").getFile();
-        String[] arg = { "-configfile", config, "-overwrite", "-verbose", "-tables", "company_mini_feed" };
+        String[] arg =
+                {"-configfile", config, "-overwrite", "-verbose", "-contextids", "krplus2", "-tables", "assistor_msg"};
         ShellRunner.main(arg);
     }
 }

@@ -21,24 +21,25 @@
 
         <commentGenerator>
             <!-- 不生成原生的注解信息 -->
+            <property name="suppressAllComments" value="true" />
             <!--<property name="suppressAllComments" value="true"/>-->
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://dev04/krplus2" userId="dev"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/krplus2" userId="dev"
                         password="UflEyGJeJX9j6TJmXVPS"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.krplus.company.model" targetProject="krplus-service/src/main/java">
+        <javaModelGenerator targetPackage="com.krplus.company.model" targetProject="/Users/mcc/Downloads/krplus-service/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.krplus.company.mapper" targetProject="krplus-service/src/main/java"/>
+        <sqlMapGenerator targetPackage="com.krplus.company.mapper" targetProject="/Users/mcc/Downloads/krplus-service/src/main/java"/>
 
-        <javaClientGenerator targetPackage="com.krplus.company.mapper" targetProject="krplus-service/src/main/java"
+        <javaClientGenerator targetPackage="com.krplus.company.mapper" targetProject="/Users/mcc/Downloads/krplus-service/src/main/java"
                              type="XMLMAPPER"/>
 
         <table tableName="company" domainObjectName="Company">
@@ -57,11 +58,11 @@
                 <property name="forceInBlobModel" value="true" />
             </columnOverride>
         </table> -->
-        <!-- <table tableName="company_audit" domainObjectName="CompanyAudit">
+        <table tableName="company_audit" domainObjectName="CompanyAudit">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="status" javaType="com.krplus.enums.AuditStatus" />
             <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource" />
-        </table> -->
+        </table>
         <!-- <table tableName="company_product" domainObjectName="CompanyProduct">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table> -->

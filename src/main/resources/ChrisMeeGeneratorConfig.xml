@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-	<context id="context1"
+	<context id="insight"
 		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
 		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
 		<property name="javaFileEncoding" value="UTF-8" />
@@ -15,36 +15,263 @@
 		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
 		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
 		<plugin type="com.generator.plugin.CommentPlugin" />
-		<plugin type="com.generator.plugin.ShardPlugin" />
-
 		<commentGenerator>
 			<!-- 不生成原生的注解信息 -->
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/feed" userId="dev"
+			connectionURL="jdbc:mysql://127.0.0.1:33070/insight" userId="analyst"
+			password="oMm78x6xAOegB9op" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.kr.rong.model.krindex"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.krindex"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" />
+		<javaClientGenerator targetPackage="com.kr.rong.mapper.krindex"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" type="XMLMAPPER" />
+		<table tableName="company_trend" domainObjectName="CompanyTrend">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+	</context>
+	<context id="krplus2"
+		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Condition" />
+		</plugin>
+		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
+		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
+		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
+		<plugin type="com.generator.plugin.CommentPlugin" />
+		<commentGenerator>
+			<!-- 不生成原生的注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:33061/krplus2" userId="krplus"
+			password="MUe0glR9XjnYfLn5" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.kr.rong.model.app.v3.assistor"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.kr.rong.mapper.app.v3.assistor"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" />
+		<javaClientGenerator targetPackage="com.kr.rong.mapper.app.v3.assistor"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" type="XMLMAPPER" />
+		<table tableName="company" domainObjectName="Company">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+			<columnOverride column="industry"
+				javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
+			<columnOverride column="finance_phase"
+				javaType="com.kr.rong.enums.finance.CompanyFinancePhase"></columnOverride>
+			<columnOverride column="status"
+				javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
+			<columnOverride column="source"
+				javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
+			<columnOverride column="operation_status"
+				javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
+		</table>
+		<table tableName="assistor_msg" domainObjectName="AssistorMsg">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+	</context>
+
+	<context id="passport"
+		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Condition" />
+		</plugin>
+		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
+		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
+		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
+		<plugin type="com.generator.plugin.CommentPlugin" />
+		<commentGenerator>
+			<!-- 不生成原生的注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:33065/passport" userId="dev"
+			password="UflEyGJeJX9j6TJmXVPS" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.kr.passport.api.model.account"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.kr.passport.provider.mapper.account"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" />
+		<javaClientGenerator targetPackage="com.kr.passport.provider.mapper.account"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" type="XMLMAPPER" />
+
+		<table tableName="account_locked" domainObjectName="AccountLocked" />
+		<table tableName="account_main" domainObjectName="AccountMain">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="account_third" domainObjectName="AccountThird">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="data_maps" domainObjectName="DataMaps">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="email_auth" domainObjectName="EmailAuth" />
+		<table tableName="email_templates" domainObjectName="EmailTemplates">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="fragment_templates" domainObjectName="FragmentTemplates">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="invite_regist" domainObjectName="InviteRegist">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="email_confirm_token" domainObjectName="EmailConfirmToken">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="locations" domainObjectName="Locations">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="oauth_access_grants" domainObjectName="OAuthAccessGrants">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="oauth_access_tokens" domainObjectName="OAuthAccessTokens">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="oauth_applications" domainObjectName="OAuthApplications">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="page_templates" domainObjectName="PageTemplates">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="profile" domainObjectName="Profile" />
+		<table tableName="remember_user" domainObjectName="RememberUser" />
+		<table tableName="reset_password" domainObjectName="ResetPassword" />
+		<table tableName="signin_info" domainObjectName="SigninInfo" />
+		<table tableName="simple_captcha_data" domainObjectName="SimpleCaptchaData">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="sms_verifycode" domainObjectName="SmsVerifyCode">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="email_verifycode" domainObjectName="EmailVerifyCode">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="url_maps" domainObjectName="UrlMaps">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="admin_help" domainObjectName="AdminHelp">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="admin_help_category" domainObjectName="AdminHelpCategory">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="reset_passwd_token" domainObjectName="ResetPasswdToken">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+	</context>
+
+	<context id="krplus"
+		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Condition" />
+		</plugin>
+		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
+		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
+		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
+		<plugin type="com.generator.plugin.CommentPlugin" />
+		<commentGenerator>
+			<!-- 不生成原生的注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:33065/krplus2" userId="dev"
+			password="UflEyGJeJX9j6TJmXVPS" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.krplus.investor.model"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.krplus.investor.mapper"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" />
+		<javaClientGenerator targetPackage="com.krplus.investor.mapper"
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" type="XMLMAPPER" />
+
+		<table tableName="investor_audit" domainObjectName="InvestorAudit">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+		<table tableName="work_experience" domainObjectName="WorkExperience">
+			<generatedKey column="id" identity="true" sqlStatement="mysql" />
+		</table>
+	</context>
+
+	<context id="feed"
+		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Condition" />
+		</plugin>
+		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
+		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
+		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
+		<plugin type="com.generator.plugin.CommentPlugin" />
+		<!-- 如果你想使用散表请打开此条注释 -->
+		<!-- <plugin type="com.generator.plugin.ShardPlugin" /> -->
+		<commentGenerator>
+			<!-- 不生成原生的注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:33065/krplus2" userId="dev"
 			password="UflEyGJeJX9j6TJmXVPS" />
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
 		<javaModelGenerator targetPackage="com.krplus.feed.model"
-			targetProject="/Users/mcc/Downloads/feed">
+			targetProject="/Users/mcc/Downloads/mysqlgenerator">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<sqlMapGenerator targetPackage="com.krplus.feed.mapper"
-			targetProject="/Users/mcc/Downloads/feed" />
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" />
 
 		<javaClientGenerator targetPackage="com.krplus.feed.mapper"
-			targetProject="/Users/mcc/Downloads/feed" type="XMLMAPPER" />
+			targetProject="/Users/mcc/Downloads/mysqlgenerator" type="XMLMAPPER" />
 
 		<table tableName="feed_template" domainObjectName="FeedTemplate">
 		</table>
 		<table tableName="feed" domainObjectName="Feed">
-			<!-- <generatedKey column="feed_id" identity="true" sqlStatement="mysql" 
-				/> -->
 		</table>
 		<table tableName="user_mini_feed" domainObjectName="UserMiniFeed">
 			<property name="shardBy" value="uid" />
@@ -55,6 +282,5 @@
 		<table tableName="user_feed" domainObjectName="UserFeed">
 			<property name="shardBy" value="uid" />
 		</table>
-
 	</context>
 </generatorConfiguration>
