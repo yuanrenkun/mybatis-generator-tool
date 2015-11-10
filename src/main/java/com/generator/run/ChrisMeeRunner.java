@@ -1,7 +1,6 @@
 package com.generator.run;
 
 import org.mybatis.generator.api.ConfigurationParserCustomizedShellRunner;
-import org.mybatis.generator.api.ShellRunner;
 import org.mybatis.generator.config.xml.KrConfigurationParser;
 
 /**
