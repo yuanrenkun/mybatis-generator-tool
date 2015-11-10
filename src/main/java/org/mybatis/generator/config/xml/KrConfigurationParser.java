@@ -12,6 +12,10 @@ import org.mybatis.generator.config.JavaModelGeneratorConfiguration;
 import org.mybatis.generator.config.SqlMapGeneratorConfiguration;
 import org.mybatis.generator.exception.XMLParserException;
 
+/**
+ * @author Chris Mee
+ * @Email micuncang@36kr.com 2015年11月11日
+ */
 public class KrConfigurationParser extends ConfigurationParser {
     public static String jdbcConnection_driverClass;
     public static String jdbcConnection_connectionURL;

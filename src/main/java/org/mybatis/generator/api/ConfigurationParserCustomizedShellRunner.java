@@ -21,6 +21,12 @@ import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 import org.mybatis.generator.logging.LogFactory;
 
+/**
+ * 添加configuration_parser_clazz，可以增强对配置文件解析器的控制
+ * 
+ * @author Chris Mee
+ * @Email micuncang@36kr.com 2015年11月11日
+ */
 public class ConfigurationParserCustomizedShellRunner {
     public static Class<? extends ConfigurationParser> configuration_parser_clazz = null;
 
