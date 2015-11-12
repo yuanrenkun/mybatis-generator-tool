@@ -21,7 +21,7 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 public class Runner {
 
     private boolean overwrite = true;
-    private Set<String> fullyqualifiedTables = new HashSet<String>();
+    private Set<String> fullyQualifiedTables = new HashSet<String>();
     private Set<String> contextIds = new HashSet<String>();
     private boolean verbose = true;
     private List<String> warnings = new ArrayList<String>();
@@ -82,7 +82,7 @@ public class Runner {
             DefaultShellCallback callback = new DefaultShellCallback(isOverwrite());
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, getWarnings());
             ProgressCallback progressCallback = isVerbose() ? new VerboseProgressCallback() : null;
-            myBatisGenerator.generate(progressCallback, getContextIds(), getFullyqualifiedTables());
+            myBatisGenerator.generate(progressCallback, getContextIds(), getFullyQualifiedTables());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,16 +100,8 @@ public class Runner {
         this.overwrite = overwrite;
     }
 
-    public Set<String> getFullyqualifiedTables() {
-        return fullyqualifiedTables;
-    }
-
-    public void setFullyqualifiedTables(Set<String> fullyqualifiedTables) {
-        this.fullyqualifiedTables = fullyqualifiedTables;
-    }
-
-    public void addFullyqualifiedTable(String fullyqualifiedTable) {
-        this.fullyqualifiedTables.add(fullyqualifiedTable);
+    public void addFullyQualifiedTable(String fullyQualifiedTable) {
+        this.fullyQualifiedTables.add(fullyQualifiedTable);
     }
 
     public void setContextIds(String... contextIds) {
@@ -272,5 +264,15 @@ public class Runner {
         if (null == v) {
             throw new RuntimeException("配置不能为空");
         }
+    }
+
+
+    public Set<String> getFullyQualifiedTables() {
+        return fullyQualifiedTables;
+    }
+
+
+    public void setFullyQualifiedTables(Set<String> fullyQualifiedTables) {
+        this.fullyQualifiedTables = fullyQualifiedTables;
     }
 }

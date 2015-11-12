@@ -19,14 +19,14 @@ public class TanxianwenKrAdminRunner {
         r.setUsername("kr_admin");
         r.setPassword("kr_admin");
         r.setTargetProject("D:/work/gitlab/kr-x/src/main/java");
-        r.setJavaModelTargetPackage("com.kr.x.model.user");
-        String mapperPackage = "com.kr.x.mapper.user";
+        r.setJavaModelTargetPackage("com.kr.x.model.user.test");
+        String mapperPackage = "com.kr.x.mapper.user.test";
         r.setJavaClientTargetPackage(mapperPackage);
         r.setSqlMapTargetPackage(mapperPackage);
 
         // 设置要生成的表
-        // r.addFullyqualifiedTable("x_resource");
-        r.addFullyqualifiedTable("x_user");
+        // r.addFullyQualifiedTable("x_resource");
+        r.addFullyQualifiedTable("x_user");
 
 
         r.run();
