@@ -16,7 +16,9 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.internal.db.ConnectionFactory;
 
 /**
- * Desc: User: HaiNan.Wang Date: 14/12/31
+ * 生成model类时，把数据表及字段注释写到类注释上，目前mysql全面支持，但pgsql只做了简单测试，出问题了可联系tanxianwen@36kr.com
+ *
+ * @author tanxianwen 2015年11月12日
  */
 public class CommentPlugin extends PluginAdapter {
     private static final String AUTHOR = "modelClassAuthor";
