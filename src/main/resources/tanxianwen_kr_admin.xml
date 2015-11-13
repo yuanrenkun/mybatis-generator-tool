@@ -4,10 +4,8 @@
 <!-- 谭先文的配置文件 -->
 <generatorConfiguration>
 	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-	<classPathEntry
-		location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
 	<context id="context1"
-		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+		targetRuntime="MyBatis3"
 		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
 		<property name="javaFileEncoding" value="UTF-8" />
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
@@ -65,10 +63,10 @@
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="role" javaType="com.kr.x.enums.XRole"></columnOverride> 
 		</table>
+		-->
 		<table tableName="x_resource" domainObjectName="XResource">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
-		-->
 		<table tableName="x_user" domainObjectName="XUser"> <generatedKey column="id" 
 			identity="true" sqlStatement="mysql" /> 
 		</table> 
