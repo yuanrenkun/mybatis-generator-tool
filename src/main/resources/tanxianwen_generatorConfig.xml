@@ -49,7 +49,7 @@
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
  		<javaClientGenerator targetPackage="com.kr.rong.mapper.company" 
-			targetProject="krplus-service" type="XMLMAPPER" />
+			targetProject="krplus-service" type="ANNOTATEDMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
 			column="id" identity="true" sqlStatement="mysql"/> <columnOverride column="Name" 
@@ -130,6 +130,7 @@
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FaBindingStatus"></columnOverride>
 		</table>
+		 -->
 		 <table tableName="company" domainObjectName="Company">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
@@ -147,7 +148,6 @@
 		    <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
 		    <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
 		</table>
-		 -->
 		<table tableName="company_comment" domainObjectName="CompanyComment">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
