@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-    <properties resource="generator_init.properties"/>
+    <properties resource="conf/vincent_generator_init.properties"/>
     <classPathEntry
             location="/Users/vincent/Documents/tools/mysql-connector-java-5.0.8.jar" />
     <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
