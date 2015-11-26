@@ -80,11 +80,6 @@
 			<columnOverride column="source" javaType="com.krplus.enums.source.VisitSource" />
 		</table>
 
-		<table tableName="news_report_application">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="report_angle" javaType="com.krplus.report.enums.NewsReportAngle" />
-		</table>
-
 		<table tableName="user" domainObjectName="User">
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 			<columnOverride column="is_display_weixin" javaType="java.lang.Boolean" />
@@ -243,5 +238,29 @@
 		<table tableName="dict_school" domainObjectName="DictSchool">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
+		
+		  <table tableName="news_report_application" domainObjectName="NewsReportApplication">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="report_angle" javaType="com.kr.rong.enums.report.NewsReportAngle" />
+            <columnOverride column="audit_status" javaType="com.kr.rong.enums.report.NewsReportStatusEnum" />
+        </table>
+        <table tableName="user_likes" domainObjectName="UserLikes">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.user.UserLikesTypeEnum" />
+        </table>
+
+        <table tableName="company_demoday" domainObjectName="CompanyDemoDay">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyDemodayStatus" />
+        </table>
+         <table tableName="investor_settings" domainObjectName="InvestorSettings">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <columnOverride column="main_invest_currency" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="year_invest_currency" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+        </table>
+
+        <table tableName="krlass_item" domainObjectName="KrlassItem">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>

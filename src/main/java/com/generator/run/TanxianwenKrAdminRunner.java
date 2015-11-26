@@ -12,7 +12,7 @@ public class TanxianwenKrAdminRunner {
     public static void main(String[] args) {
         Runner r = new Runner();
 
-        r.setConfigFile(TanxianwenKrAdminRunner.class.getClassLoader().getResource("admin_generatorConfig.xml").getFile());
+        r.setConfigFile(TanxianwenKrAdminRunner.class.getClassLoader().getResource("kr_admin_generatorConfig.xml").getFile());
         r.setContextIds("context1");
         r.setTargetProject("D:/work/gitlab/kr-x/src/main/java");
         r.setJavaModelTargetPackage("com.kr.x.model.user.test");
