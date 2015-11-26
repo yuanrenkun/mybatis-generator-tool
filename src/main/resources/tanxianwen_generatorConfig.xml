@@ -49,7 +49,7 @@
 
 		<!-- <javaClientGenerator targetPackage="com.krplus.tag.mapper" -->
  		<javaClientGenerator targetPackage="com.kr.rong.mapper.company" 
-			targetProject="krplus-service" type="ANNOTATEDMAPPER" />
+			targetProject="krplus-service" type="XMLMAPPER" />
 
 		<!-- <table tableName="inmail" domainObjectName="Inmail2"> <generatedKey 
 			column="id" identity="true" sqlStatement="mysql"/> <columnOverride column="Name" 
