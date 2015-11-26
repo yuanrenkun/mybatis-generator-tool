@@ -90,6 +90,15 @@
 		<table tableName="user_privilege" domainObjectName="UserPrivilege">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
+        <table tableName="user_likes" domainObjectName="UserLikes">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.user.UserLikesTypeEnum" />
+        </table>
+        <table tableName="user_blacklist" domainObjectName="UserBlacklist">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.kr.rong.enums.BlacklistStatusEnum" />
+            <columnOverride column="freeze_type" javaType="com.kr.rong.enums.user.UserFreezeType" />
+        </table>
 		
 		<!--创业服务 begin -->
 		<table tableName="service_provider" domainObjectName="ServiceProvider">
@@ -243,10 +252,6 @@
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="report_angle" javaType="com.kr.rong.enums.report.NewsReportAngle" />
             <columnOverride column="audit_status" javaType="com.kr.rong.enums.report.NewsReportStatusEnum" />
-        </table>
-        <table tableName="user_likes" domainObjectName="UserLikes">
-            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="type" javaType="com.kr.rong.enums.user.UserLikesTypeEnum" />
         </table>
 
         <table tableName="company_demoday" domainObjectName="CompanyDemoDay">
