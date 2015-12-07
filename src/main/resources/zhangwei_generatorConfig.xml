@@ -46,12 +46,12 @@
         <table tableName="krlass_item" domainObjectName="KrlassItem">
         </table>
 
-        <table tableName="krlass_option_record" domainObjectName="KrlassOptionRecord">
-        </table>
+        <!--<table tableName="krlass_option_record" domainObjectName="KrlassOptionRecord">
+        </table>-->
 
-        <table tableName="krlass_tutor" domainObjectName="KrlassTutor">
+        <!--<table tableName="krlass_tutor" domainObjectName="KrlassTutor">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-        </table>
+        </table>-->
         <!-- <table tableName="company_audit" domainObjectName="CompanyAudit">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="status" javaType="com.krplus.enums.AuditStatus" />
