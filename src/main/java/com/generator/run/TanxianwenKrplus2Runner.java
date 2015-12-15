@@ -15,17 +15,19 @@ public class TanxianwenKrplus2Runner {
         r.setConfigFile(TanxianwenKrplus2Runner.class.getClassLoader().getResource("krplus2_generatorConfig.xml").getFile());
         r.setContextIds("context1");
         r.setTargetProject("D:/work/gitlab/krplus-service/src/main/java");
-        //r.setJavaModelTargetPackage("com.kr.rong.model.company.test");
-        r.setJavaModelTargetPackage("com.kr.rong.model.blacklist");
-        //String mapperPackage = "com.kr.rong.mapper.company.test";
-        String mapperPackage = "com.kr.rong.mapper.blacklist";
+        // r.setJavaModelTargetPackage("com.kr.rong.model.company.test");
+        r.setJavaModelTargetPackage("com.kr.rong.model.activity.letter");
+        // String mapperPackage = "com.kr.rong.mapper.company.test";
+        // String mapperPackage = "com.kr.rong.mapper.blacklist";
+        String mapperPackage = "com.kr.rong.mapper.activity.letter";
         r.setJavaClientTargetPackage(mapperPackage);
         r.setSqlMapTargetPackage(mapperPackage);
 
         // 设置要生成的表
-        //r.addFullyQualifiedTable("company");
-        //r.addFullyQualifiedTable("company_funds");
-        r.addFullyQualifiedTable("user_blacklist");
+        // r.addFullyQualifiedTable("company");
+        // r.addFullyQualifiedTable("company_funds");
+        // r.addFullyQualifiedTable("user_blacklist");
+        r.addFullyQualifiedTable("activity_company_letter");
 
 
         r.run();

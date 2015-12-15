@@ -24,7 +24,7 @@
 			<!-- 不生成原生的注解信息 -->
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://db1.test/krplus2" userId="krplus" password="MUe0glR9XjnYfLn5" />
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.14/krplus2" userId="db-test" password="123456" />
 
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
@@ -265,6 +265,10 @@
         </table>
 
         <table tableName="krlass_item" domainObjectName="KrlassItem">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
+        
+        <table tableName="activity_company_letter" domainObjectName="ActivityCompanyLetter">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
 	</context>
