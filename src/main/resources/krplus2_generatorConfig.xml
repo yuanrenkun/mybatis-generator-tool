@@ -86,6 +86,16 @@
 			<columnOverride column="is_email_activate" javaType="java.lang.Boolean" />
 			<columnOverride column="coinvestor_type" javaType="com.kr.rong.enums.CoinvestorType" />
 			<columnOverride column="lead_investor_type" javaType="com.kr.rong.enums.LeadInvestorType" />
+			<ignoreColumn column="invest_money_begin" />
+			<ignoreColumn column="invest_money_end" />
+			<ignoreColumn column="invest_money_unit" />
+			<ignoreColumn column="org_money_begin" />
+			<ignoreColumn column="org_money_end" />
+			<ignoreColumn column="org_money_unit" />
+			<ignoreColumn column="is_invest_first_phase" />
+			<ignoreColumn column="is_invest_second_phase" />
+			<ignoreColumn column="is_invest_third_phase" />
+			<ignoreColumn column="is_realname" />
 		</table>
 		<table tableName="user_privilege" domainObjectName="UserPrivilege">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
