@@ -81,7 +81,7 @@
 		</table>
 
 		<table tableName="user" domainObjectName="User">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
 			<columnOverride column="is_display_weixin" javaType="java.lang.Boolean" />
 			<columnOverride column="is_email_activate" javaType="java.lang.Boolean" />
 			<columnOverride column="coinvestor_type" javaType="com.kr.rong.enums.CoinvestorType" />
