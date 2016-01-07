@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<!-- msg的配置文件:wangsr -->
+<generatorConfiguration>
+    <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
+    <context id="context"
+             targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+             introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Condition"/>
+        </plugin>
+        <plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin"/>
+        <plugin type="com.generator.plugin.MysqlPagingPlugin"/>
+        <plugin type="com.generator.plugin.TinyintToIntegerPlugin"/>
+        <plugin type="com.generator.plugin.CommentPlugin">
+            <!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
+            <!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
+        </plugin>
+
+        <commentGenerator>
+            <!-- 不生成原生的注解信息 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.2.14:3306/kr_msg" userId="db-test"
+                        password="123456"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage=""
+                            targetProject="">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage=""
+                         targetProject=""/>
+
+        <javaClientGenerator targetPackage=""
+                             targetProject="" type="XMLMAPPER"/>
+
+        <table tableName="notice" domainObjectName="SystemNotice">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="app_id" javaType="com.kr.msg.api.enums.AppIdEnum"></columnOverride>
+            <columnOverride column="notice_type" javaType="com.kr.msg.api.enums.NoticeTypeEnum"></columnOverride>
+            <columnOverride column="notice_subtype" javaType="com.kr.msg.api.enums.NoticeSubTypeEnum"></columnOverride>
+            <columnOverride column="operation" javaType="com.kr.msg.api.enums.OperationEnum"></columnOverride>
+            <columnOverride column="target" javaType="com.kr.msg.api.enums.TargetEnum"></columnOverride>
+            <columnOverride column="is_delete" javaType="com.kr.msg.api.enums.DeleteStateEnum"></columnOverride>
+            <columnOverride column="is_read" javaType="com.kr.msg.api.enums.ReadStateEnum"></columnOverride>
+        </table>
+        <table tableName="notice_tpl" domainObjectName="SystemNoticeTpl">
+            <generatedKey column="id"
+                          identity="true" sqlStatement="mysql"/>
+            <columnOverride column="app_id" javaType="com.kr.msg.api.enums.AppIdEnum"></columnOverride>
+            <columnOverride column="target" javaType="com.kr.msg.api.enums.TargetEnum"></columnOverride>
+        </table>
+        <table tableName="inbox" domainObjectName="Inbox">
+            <generatedKey column="id"
+                          identity="true" sqlStatement="mysql"/>
+            <columnOverride column="is_delete" javaType="com.kr.msg.api.enums.DeleteStateEnum"></columnOverride>
+            <columnOverride column="is_read" javaType="com.kr.msg.api.enums.ReadStateEnum"></columnOverride>
+        </table>
+        <table tableName="outbox" domainObjectName="Outbox">
+            <generatedKey column="id"
+                          identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="mail_content" domainObjectName="MailContent">
+            <generatedKey column="id"
+                          identity="true" sqlStatement="mysql"/>
+        </table>
+    </context>
+</generatorConfiguration>
