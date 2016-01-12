@@ -47,6 +47,7 @@
 			<columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
 			<columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
 			<columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
+			<columnOverride column="company_type" javaType="com.kr.rong.enums.company.CompanyTypeEnum"></columnOverride>
 		</table>
 		<table tableName="company_audit" domainObjectName="CompanyAudit">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
