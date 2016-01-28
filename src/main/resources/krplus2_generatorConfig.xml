@@ -291,7 +291,7 @@
         </table>
         <table tableName="roadshow" domainObjectName="Roadshow">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
-            <columnOverride column="permission" javaType="com.kr.rong.enums.roadshow.RoadshowPermission"></columnOverride>
+            <!-- <columnOverride column="permission" javaType="com.kr.rong.enums.roadshow.RoadshowPermission"></columnOverride> -->
             <columnOverride column="status" javaType="com.kr.rong.enums.roadshow.RoadshowStatus"></columnOverride>
             <columnOverride column="roadshow_type" javaType="com.kr.rong.enums.roadshow.RoadshowType"></columnOverride>
         </table>
