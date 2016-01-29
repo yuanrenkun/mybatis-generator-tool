@@ -16,10 +16,12 @@ public class TanxianwenKrplus2Runner {
         r.setContextIds("context1");
         r.setTargetProject("D:/work/gitlab/krplus-service/src/main/java");
         // r.setJavaModelTargetPackage("com.kr.rong.model.company.test");
-        r.setJavaModelTargetPackage("com.kr.rong.model.activity.letter");
+        //r.setJavaModelTargetPackage("com.kr.rong.model.activity.letter");
+        r.setJavaModelTargetPackage("com.kr.rong.model.roadshow");
         // String mapperPackage = "com.kr.rong.mapper.company.test";
         // String mapperPackage = "com.kr.rong.mapper.blacklist";
-        String mapperPackage = "com.kr.rong.mapper.activity.letter";
+        //String mapperPackage = "com.kr.rong.mapper.activity.letter";
+        String mapperPackage = "com.kr.rong.mapper.roadshow";
         r.setJavaClientTargetPackage(mapperPackage);
         r.setSqlMapTargetPackage(mapperPackage);
 
@@ -27,8 +29,11 @@ public class TanxianwenKrplus2Runner {
         // r.addFullyQualifiedTable("company");
         // r.addFullyQualifiedTable("company_funds");
         // r.addFullyQualifiedTable("user_blacklist");
-        r.addFullyQualifiedTable("activity_company_letter");
+        //r.addFullyQualifiedTable("activity_company_letter");
 
+        //r.addFullyQualifiedTable("roadshow_reply");
+        //r.addFullyQualifiedTable("roadshow_comment");
+        r.addFullyQualifiedTable("roadshow");
 
         r.run();
     }
