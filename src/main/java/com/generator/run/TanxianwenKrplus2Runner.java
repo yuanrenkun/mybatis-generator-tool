@@ -32,8 +32,8 @@ public class TanxianwenKrplus2Runner {
         //r.addFullyQualifiedTable("activity_company_letter");
 
         //r.addFullyQualifiedTable("roadshow_reply");
-        //r.addFullyQualifiedTable("roadshow_comment");
-        r.addFullyQualifiedTable("roadshow");
+        r.addFullyQualifiedTable("roadshow_comment");
+        //r.addFullyQualifiedTable("roadshow");
 
         r.run();
     }
