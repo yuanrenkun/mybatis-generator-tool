@@ -12,14 +12,15 @@ public class QuXiaoRunner {
 
         r.setConfigFile(QuXiaoRunner.class.getClassLoader().getResource("krplus2_generatorConfig.xml").getFile());
         r.setContextIds("context1");
-        r.setTargetProject("E:/code");
-        r.setJavaModelTargetPackage("com.kr.rong.model.user");
-        String mapperPackage = "com.kr.rong.mapper.user";
+        r.setTargetProject("D:\\IdeaWorkspace\\kr\\kr-chuang-service\\src\\main\\java");
+        r.setJavaModelTargetPackage("com.kr.chuang.model");
+        String mapperPackage = "com.kr.chuang.mapper";
         r.setJavaClientTargetPackage(mapperPackage);
         r.setSqlMapTargetPackage(mapperPackage);
 
         // 设置要生成的表
-        r.addFullyQualifiedTable("user");
+        r.addFullyQualifiedTable("service_display_order");
+        r.addFullyQualifiedTable("service_customer");
 
 
         r.run();

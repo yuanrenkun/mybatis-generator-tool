@@ -140,6 +140,15 @@
 		<table tableName="service_catalog" domainObjectName="ServiceCatalog">
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
+
+		<table tableName="service_display_order" domainObjectName="ServiceDisplayOrder">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
+		<table tableName="service_customer" domainObjectName="ServiceCustomer">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
