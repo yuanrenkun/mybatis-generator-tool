@@ -9,10 +9,10 @@ import java.io.IOException;
 /**
  * @author haokuixi
  */
-public class HaokuixiRunner {
+public class VincentRunner {
     public static void main(String[] args) throws IOException {
-        File configFile = Resources.getResourceAsFile("generatorConfig.xml");
-        String[] arg = {"-configfile", configFile.getPath(), "-overwrite", "-verbose", "-tables", "xxx"};
+        File configFile = Resources.getResourceAsFile("Vincent_generatorConfig_by_properties.xml");
+        String[] arg = {"-configfile", configFile.getPath(), "-overwrite", "-verbose", "-tables", "system_param"};
         ShellRunner.main(arg);
     }
 }

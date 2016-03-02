@@ -5,7 +5,7 @@
 <generatorConfiguration>
 	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
 	<context id="context1"
-		targetRuntime="MyBatis3"
+		targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
 		introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
 		<property name="javaFileEncoding" value="UTF-8" />
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
@@ -33,28 +33,18 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
-		<javaModelGenerator targetPackage="com.kr.x.model.user"
-			targetProject="kr-x">
+		<javaModelGenerator targetPackage=""
+			targetProject="">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.kr.x.mapper.user"
-			targetProject="kr-x" />
+		<sqlMapGenerator targetPackage=""
+			targetProject="" />
 
-		<javaClientGenerator targetPackage="com.kr.x.mapper.user"
-			targetProject="kr-x" type="XMLMAPPER" />
+		<javaClientGenerator targetPackage=""
+			targetProject="" type="XMLMAPPER" />
 
-		<!-- <table tableName="company_funds" domainObjectName="CompanyFunds"> 
-			<generatedKey column="id" identity="true" sqlStatement="mysql" /> <columnOverride 
-			column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride> 
-			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride> 
-			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride> 
-			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride> 
-			<columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride> 
-			<columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride> 
-			</table> <table tableName="fa_white_list" domainObjectName="FaWhiteList"> 
-			<generatedKey column="id" identity="true" sqlStatement="mysql" /> </table> 
 		<table tableName="x_permission" domainObjectName="XPermission">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="role" javaType="com.kr.x.enums.XRole"></columnOverride> 
@@ -63,7 +53,6 @@
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 			<columnOverride column="role" javaType="com.kr.x.enums.XRole"></columnOverride> 
 		</table>
-		-->
 		<table tableName="x_resource" domainObjectName="XResource">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>

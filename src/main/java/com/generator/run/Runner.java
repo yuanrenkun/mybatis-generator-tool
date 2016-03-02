@@ -43,6 +43,14 @@ public class Runner {
         return warnings;
     }
 
+    private boolean isEmpty(String str) {
+        return null == str || str.length() == 0;
+    }
+
+    private boolean isNotEmpty(String str) {
+        return !isEmpty(str);
+    }
+
 
     /**
      * 后置处理解析完毕的配置，给最后一次覆盖配置的机会
@@ -53,22 +61,42 @@ public class Runner {
         List<Context> contexts = config.getContexts();
         for (Context ctx : contexts) {
             JavaClientGeneratorConfiguration javaClient = ctx.getJavaClientGeneratorConfiguration();
-            javaClient.setTargetProject(getJavaClientTargetProject());
-            javaClient.setTargetPackage(getJavaClientTargetPackage());
+            if (isNotEmpty(getJavaClientTargetProject())) {
+                javaClient.setTargetProject(getJavaClientTargetProject());
+            }
+            if (isNotEmpty(getJavaClientTargetPackage())) {
+                javaClient.setTargetPackage(getJavaClientTargetPackage());
+            }
 
             JavaModelGeneratorConfiguration javaModel = ctx.getJavaModelGeneratorConfiguration();
-            javaModel.setTargetProject(getJavaModelTargetProject());
-            javaModel.setTargetPackage(getJavaModelTargetPackage());
+            if (isNotEmpty(getJavaModelTargetProject())) {
+                javaModel.setTargetProject(getJavaModelTargetProject());
+            }
+            if (isNotEmpty(getJavaModelTargetPackage())) {
+                javaModel.setTargetPackage(getJavaModelTargetPackage());
+            }
 
             SqlMapGeneratorConfiguration sqlMap = ctx.getSqlMapGeneratorConfiguration();
-            sqlMap.setTargetProject(getSqlMapTargetProject());
-            sqlMap.setTargetPackage(getSqlMapTargetPackage());
+            if (isNotEmpty(getSqlMapTargetProject())) {
+                sqlMap.setTargetProject(getSqlMapTargetProject());
+            }
+            if (isNotEmpty(getSqlMapTargetPackage())) {
+                sqlMap.setTargetPackage(getSqlMapTargetPackage());
+            }
 
             JDBCConnectionConfiguration jdbc = ctx.getJdbcConnectionConfiguration();
-            jdbc.setConnectionURL(getJdbcConnectionUrl());
-            jdbc.setDriverClass(getJdbcDriverClass());
-            jdbc.setPassword(getPassword());
-            jdbc.setUserId(getUsername());
+            if (isNotEmpty(getJdbcConnectionUrl())) {
+                jdbc.setConnectionURL(getJdbcConnectionUrl());
+            }
+            if (isNotEmpty(getJdbcDriverClass())) {
+                jdbc.setDriverClass(getJdbcDriverClass());
+            }
+            if (isNotEmpty(getPassword())) {
+                jdbc.setPassword(getPassword());
+            }
+            if (isNotEmpty(getUsername())) {
+                jdbc.setUserId(getUsername());
+            }
         }
 
     }
@@ -126,7 +154,6 @@ public class Runner {
 
 
     public String getConfigFile() {
-        assertNotNull(configFile);
         return configFile;
     }
 
@@ -137,7 +164,6 @@ public class Runner {
 
 
     public String getTargetProject() {
-        assertNotNull(targetProject);
         return targetProject;
     }
 
@@ -187,7 +213,6 @@ public class Runner {
 
 
     public String getJavaClientTargetPackage() {
-        assertNotNull(javaClientTargetPackage);
         return javaClientTargetPackage;
     }
 
@@ -198,7 +223,6 @@ public class Runner {
 
 
     public String getJavaModelTargetPackage() {
-        assertNotNull(javaModelTargetPackage);
         return javaModelTargetPackage;
     }
 
@@ -209,7 +233,6 @@ public class Runner {
 
 
     public String getSqlMapTargetPackage() {
-        assertNotNull(sqlMapTargetPackage);
         return sqlMapTargetPackage;
     }
 
@@ -240,7 +263,6 @@ public class Runner {
 
 
     public String getJdbcDriverClass() {
-        assertNotNull(jdbcDriverClass);
         return jdbcDriverClass;
     }
 
@@ -251,7 +273,6 @@ public class Runner {
 
 
     public String getJdbcConnectionUrl() {
-        assertNotNull(jdbcConnectionUrl);
         return jdbcConnectionUrl;
     }
 
@@ -259,13 +280,6 @@ public class Runner {
     public void setJdbcConnectionUrl(String jdbcConnectionUrl) {
         this.jdbcConnectionUrl = jdbcConnectionUrl;
     }
-
-    private void assertNotNull(String v) {
-        if (null == v) {
-            throw new RuntimeException("配置不能为空");
-        }
-    }
-
 
     public Set<String> getFullyQualifiedTables() {
         return fullyQualifiedTables;
