@@ -10,7 +10,7 @@ import org.mybatis.generator.config.xml.KrConfigurationParser;
 public class ChrisMeeRunner {
     public static void main(String[] args) {
         String config = ChrisMeeRunner.class.getClassLoader().getResource("krplus2_generatorConfig.xml").getFile();
-        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "context1", "-tables", "company_comment"};
+        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "context1", "-tables", "user_company_comment"};
 
         ConfigurationParserCustomizedShellRunner.configuration_parser_clazz = KrConfigurationParser.class;
 
@@ -20,9 +20,9 @@ public class ChrisMeeRunner {
         KrConfigurationParser.jdbcConnection_userId = "db-test";
 
         KrConfigurationParser.initTargetProject("/Users/mcc/Downloads/mysqlgenerator");
-        KrConfigurationParser.javaClientGenerator_targetPackage = "com.kr.rong.mapper.company";
-        KrConfigurationParser.javaModelGenerator_targetPackage = "com.kr.rong.model.company";
-        KrConfigurationParser.sqlMapGenerator_targetPackage = "com.kr.rong.mapper.company";
+        KrConfigurationParser.javaClientGenerator_targetPackage = "com.kr.rong.mapper.user";
+        KrConfigurationParser.javaModelGenerator_targetPackage = "com.kr.rong.model.user";
+        KrConfigurationParser.sqlMapGenerator_targetPackage = "com.kr.rong.mapper.user";
 
         ConfigurationParserCustomizedShellRunner.main(arg);
     }

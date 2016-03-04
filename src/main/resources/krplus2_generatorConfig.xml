@@ -311,5 +311,10 @@
         <table tableName="app_version" domainObjectName="AppVersion">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
+        
+        <!-- 用户被评论的数据 -->
+        <table tableName="user_company_comment" domainObjectName="UserCompanyComment">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>
