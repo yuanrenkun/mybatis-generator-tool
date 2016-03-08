@@ -47,6 +47,7 @@
 			<columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
 			<columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
 			<columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
+			<columnOverride column="company_type" javaType="com.kr.rong.enums.company.CompanyTypeEnum"></columnOverride>
 		</table>
 		<table tableName="company_audit" domainObjectName="CompanyAudit">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
@@ -139,6 +140,15 @@
 		<table tableName="service_catalog" domainObjectName="ServiceCatalog">
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
+
+		<table tableName="service_display_order" domainObjectName="ServiceDisplayOrder">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
+		<table tableName="service_customer" domainObjectName="ServiceCustomer">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
@@ -284,5 +294,30 @@
 		<table tableName="user_binding" domainObjectName="UserBind">
 			<generatedKey column="id" identity="true" sqlStatement="mysql" />
 		</table>
+
+        <!-- 路演功能相关表  -->
+        <table tableName="roadshow_reply" domainObjectName="RoadshowReply">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
+        <table tableName="roadshow_comment" domainObjectName="RoadshowComment">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <columnOverride column="video_time" javaType="Integer"></columnOverride>
+        </table>
+        <table tableName="roadshow" domainObjectName="Roadshow">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <!-- <columnOverride column="permission" javaType="com.kr.rong.enums.roadshow.RoadshowPermission"></columnOverride> -->
+            <columnOverride column="status" javaType="com.kr.rong.enums.roadshow.RoadshowStatus"></columnOverride>
+            <columnOverride column="roadshow_type" javaType="com.kr.rong.enums.roadshow.RoadshowType"></columnOverride>
+        </table>
+        
+        <!-- 客户端版本List -->
+        <table tableName="app_version" domainObjectName="AppVersion">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
+        
+        <!-- 用户被评论的数据 -->
+        <table tableName="user_company_comment" domainObjectName="UserCompanyComment">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>

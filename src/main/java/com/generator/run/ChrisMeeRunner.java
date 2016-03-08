@@ -9,20 +9,20 @@ import org.mybatis.generator.config.xml.KrConfigurationParser;
  */
 public class ChrisMeeRunner {
     public static void main(String[] args) {
-        String config = ChrisMeeRunner.class.getClassLoader().getResource("ChrisMeeGeneratorConfig.xml").getFile();
-        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "passport", "-tables", "profile"};
+        String config = ChrisMeeRunner.class.getClassLoader().getResource("krplus2_generatorConfig.xml").getFile();
+        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "context1", "-tables", "user_company_comment"};
 
         ConfigurationParserCustomizedShellRunner.configuration_parser_clazz = KrConfigurationParser.class;
 
-        KrConfigurationParser.jdbcConnection_connectionURL = "jdbc:mysql://127.0.0.1:33065/passport";
+        KrConfigurationParser.jdbcConnection_connectionURL = "jdbc:mysql://192.168.2.14:3306/krplus2";
         KrConfigurationParser.jdbcConnection_driverClass = "com.mysql.jdbc.Driver";
-        KrConfigurationParser.jdbcConnection_password = "UflEyGJeJX9j6TJmXVPS";
-        KrConfigurationParser.jdbcConnection_userId = "dev";
+        KrConfigurationParser.jdbcConnection_password = "123456";
+        KrConfigurationParser.jdbcConnection_userId = "db-test";
 
         KrConfigurationParser.initTargetProject("/Users/mcc/Downloads/mysqlgenerator");
-        KrConfigurationParser.javaClientGenerator_targetPackage = "com.kr.passport.provider.mapper.account";
-        KrConfigurationParser.javaModelGenerator_targetPackage = "com.kr.passport.api.model.account";
-        KrConfigurationParser.sqlMapGenerator_targetPackage = "com.kr.passport.provider.mapper.account";
+        KrConfigurationParser.javaClientGenerator_targetPackage = "com.kr.rong.mapper.user";
+        KrConfigurationParser.javaModelGenerator_targetPackage = "com.kr.rong.model.user";
+        KrConfigurationParser.sqlMapGenerator_targetPackage = "com.kr.rong.mapper.user";
 
         ConfigurationParserCustomizedShellRunner.main(arg);
     }
