@@ -52,6 +52,7 @@
             <columnOverride column="notice_subtype" javaType="com.kr.msg.api.enums.NoticeSubTypeEnum"></columnOverride>
             <columnOverride column="operation" javaType="com.kr.msg.api.enums.OperationEnum"></columnOverride>
             <columnOverride column="target" javaType="com.kr.msg.api.enums.TargetEnum"></columnOverride>
+            <columnOverride column="target_app" javaType="com.kr.msg.api.enums.TargetAppEnum"></columnOverride>
             <columnOverride column="is_delete" javaType="com.kr.msg.api.enums.DeleteStateEnum"></columnOverride>
             <columnOverride column="is_read" javaType="com.kr.msg.api.enums.ReadStateEnum"></columnOverride>
         </table>
@@ -60,7 +61,9 @@
                           identity="true" sqlStatement="mysql"/>
             <columnOverride column="app_id" javaType="com.kr.msg.api.enums.AppIdEnum"></columnOverride>
             <columnOverride column="target" javaType="com.kr.msg.api.enums.TargetEnum"></columnOverride>
+            <columnOverride column="target_app" javaType="com.kr.msg.api.enums.TargetAppEnum"></columnOverride>
         </table>
+
         <table tableName="inbox" domainObjectName="Inbox">
             <generatedKey column="id"
                           identity="true" sqlStatement="mysql"/>
@@ -74,6 +77,11 @@
         <table tableName="mail_content" domainObjectName="MailContent">
             <generatedKey column="id"
                           identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="user_rc_token" domainObjectName="UserRcToken">
+            <generatedKey column="id"
+                          identity="true" sqlStatement="mysql"/>
+            <columnOverride column="token_app" javaType="com.kr.msg.api.enums.TargetAppEnum"></columnOverride>
         </table>
     </context>
 </generatorConfiguration>
