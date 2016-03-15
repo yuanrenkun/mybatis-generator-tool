@@ -316,5 +316,10 @@
         <table tableName="user_company_comment" domainObjectName="UserCompanyComment">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
+        
+        <!-- 用户被赞的数据 -->
+        <table tableName="user_company_comment_like" domainObjectName="UserCompanyCommentLike">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>
