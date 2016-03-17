@@ -149,6 +149,16 @@
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
 
+		<table tableName="service_index" domainObjectName="ServiceIndexItem">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+		<table tableName="service_act_best_provider" domainObjectName="ServiceActBestProvider">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+		<table tableName="service_act_best_provider_support_record" domainObjectName="ServiceActBestProviderSupportRecord">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
