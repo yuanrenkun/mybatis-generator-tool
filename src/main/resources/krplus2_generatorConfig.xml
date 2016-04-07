@@ -334,5 +334,10 @@
         <table tableName="user_company_comment_like" domainObjectName="UserCompanyCommentLike">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
+
+        <!-- 用户CRM标签 -->
+        <table tableName="user_crm_tag" domainObjectName="UserCrmTag">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>

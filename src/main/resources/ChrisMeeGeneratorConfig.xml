@@ -245,7 +245,7 @@
 		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
 		<plugin type="com.generator.plugin.CommentPlugin" />
 		<!-- 如果你想使用散表请打开此条注释 -->
-		<!-- <plugin type="com.generator.plugin.ShardPlugin" /> -->
+		<plugin type="com.generator.plugin.ShardPlugin" />
 		<commentGenerator>
 			<!-- 不生成原生的注解信息 -->
 			<property name="suppressAllComments" value="true" />
