@@ -149,6 +149,20 @@
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
 
+		<table tableName="service_index" domainObjectName="ServiceIndexItem">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+		<table tableName="service_act_best_provider" domainObjectName="ServiceActBestProvider">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+		<table tableName="service_act_best_provider_support_record" domainObjectName="ServiceActBestProviderSupportRecord">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
+		<table tableName="service_tag" domainObjectName="ServiceTag">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
@@ -317,6 +331,16 @@
         
         <!-- 用户被评论的数据 -->
         <table tableName="user_company_comment" domainObjectName="UserCompanyComment">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
+        
+        <!-- 用户被赞的数据 -->
+        <table tableName="user_company_comment_like" domainObjectName="UserCompanyCommentLike">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
+
+        <!-- 用户CRM标签 -->
+        <table tableName="user_crm_tag" domainObjectName="UserCrmTag">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
 	</context>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
+	<!--<classPathEntry -->
+	<!--location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/> -->
+	<context id="context1" targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl" introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Condition" />
+		</plugin>
+		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
+		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
+		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
+		<plugin type="com.generator.plugin.CommentPlugin">
+			<!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
+			<!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
+		</plugin>
+
+		<commentGenerator>
+			<!-- 不生成原生的注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.14/passport" userId="db-test" password="123456" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="" targetProject="">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="" targetProject="" />
+
+		<javaClientGenerator targetPackage="" targetProject="" type="XMLMAPPER" />
+
+		<!-- passport库所有表  -->
+        <table tableName="security_info" domainObjectName="SecurityInfo">
+        </table>
+	</context>
+</generatorConfiguration>

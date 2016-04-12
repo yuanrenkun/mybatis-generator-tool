@@ -10,7 +10,7 @@ import org.mybatis.generator.config.xml.KrConfigurationParser;
 public class ChrisMeeRunner {
     public static void main(String[] args) {
         String config = ChrisMeeRunner.class.getClassLoader().getResource("krplus2_generatorConfig.xml").getFile();
-        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "context1", "-tables", "user_company_comment"};
+        String[] arg = {"-configfile", config, "-overwrite", "-verbose", "-contextids", "context1", "-tables", "user_crm_tag"};
 
         ConfigurationParserCustomizedShellRunner.configuration_parser_clazz = KrConfigurationParser.class;
 
