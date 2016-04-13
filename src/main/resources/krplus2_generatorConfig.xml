@@ -340,5 +340,10 @@
         <table tableName="user_crm_tag" domainObjectName="UserCrmTag">
             <generatedKey column="id" identity="true" sqlStatement="mysql" />
         </table>
+
+        <!-- 用户私信快捷回复 -->
+        <table tableName="sixin_quick_reply" domainObjectName="SixinQuickReply">
+            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        </table>
 	</context>
 </generatorConfiguration>
