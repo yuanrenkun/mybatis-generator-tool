@@ -168,6 +168,13 @@
 		<table tableName="service_item_tag" domainObjectName="ServiceItemTag">
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
+		<table tableName="service_comment_invite_record" domainObjectName="ServiceCommentInviteRecord">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<columnOverride column="status" javaType="com.kr.chuang.enums.CommentInviteRecordStatusEnum" />
+		</table>
+		<table tableName="service_invite_comment" domainObjectName="ServiceInviteComment">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
 
 		<!--创业服务 end -->
 

@@ -19,7 +19,8 @@ public class QuXiaoRunner {
         r.setSqlMapTargetPackage(mapperPackage);
 
         // 设置要生成的表
-        r.addFullyQualifiedTable("service_customer");
+        r.addFullyQualifiedTable("service_invite_comment");
+        r.addFullyQualifiedTable("service_comment_invite_record");
 
         r.run();
     }
