@@ -149,7 +149,7 @@
 		<table tableName="service_customer" domainObjectName="ServiceCustomer">
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 			<columnOverride column="status" javaType="com.kr.chuang.enums.CustomerStatusEnum" />
-			<columnOverride column="invite_status" javaType="com.kr.chuang.enums.InviteCommentStatusEnum" />
+			<columnOverride column="invite_status" javaType="com.kr.chuang.enums.InviteStatusEnum" />
 		</table>
 
 		<table tableName="service_index" domainObjectName="ServiceIndexItem">
