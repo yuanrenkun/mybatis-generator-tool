@@ -182,6 +182,12 @@
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
 
+		<table tableName="service_op_log" domainObjectName="ServiceOpLog">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<columnOverride column="op_type" javaType="com.kr.chuang.enums.OpTypeEnum" />
+			<columnOverride column="op_action" javaType="com.kr.chuang.enums.OpActionTypeEnum" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
