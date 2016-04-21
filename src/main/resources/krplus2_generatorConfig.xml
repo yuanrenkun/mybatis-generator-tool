@@ -188,6 +188,11 @@
 			<columnOverride column="op_action" javaType="com.kr.chuang.enums.OpActionTypeEnum" />
 		</table>
 
+		<table tableName="service_lightspot" domainObjectName="ServiceLightSpot">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<columnOverride column="status" javaType="com.kr.chuang.enums.LightSpotStatusEnum" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">

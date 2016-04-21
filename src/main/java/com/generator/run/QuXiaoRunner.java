@@ -23,7 +23,8 @@ public class QuXiaoRunner {
 //        r.addFullyQualifiedTable("service_invite_comment");
 //        r.addFullyQualifiedTable("service_comment_invite_record");
 //        r.addFullyQualifiedTable("service_latest_invite_comment");
-        r.addFullyQualifiedTable("service_op_log");
+//        r.addFullyQualifiedTable("service_op_log");
+        r.addFullyQualifiedTable("service_lightspot");
 
         r.run();
     }
