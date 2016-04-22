@@ -193,6 +193,10 @@
 			<columnOverride column="status" javaType="com.kr.chuang.enums.LightSpotStatusEnum" />
 		</table>
 
+		<table tableName="service_lightspot_like_record" domainObjectName="ServiceLightSpotLikeRecord">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
