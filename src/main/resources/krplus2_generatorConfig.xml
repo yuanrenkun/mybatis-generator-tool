@@ -197,6 +197,18 @@
 			<generatedKey column="id" sqlStatement="mysql" identity="true" />
 		</table>
 
+		<table tableName="service_act_domain" domainObjectName="ServiceActDomain">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
+		<table tableName="service_act_domain_item" domainObjectName="ServiceActDomainItem">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainItemStatusEnum" />
+		</table>
+
+
+
+
 		<!--创业服务 end -->
 
 		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
