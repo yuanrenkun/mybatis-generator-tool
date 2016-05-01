@@ -206,6 +206,11 @@
 			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainItemStatusEnum" />
 		</table>
 
+		<table tableName="service_act_domain_comment" domainObjectName="ServiceActDomainComment">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainCommentStatusEnum" />
+		</table>
+
 
 
 
