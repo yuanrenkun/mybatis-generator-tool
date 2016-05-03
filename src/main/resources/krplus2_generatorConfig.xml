@@ -211,6 +211,10 @@
 			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainCommentStatusEnum" />
 		</table>
 
+		<table tableName="service_like_record" domainObjectName="ServiceLikeRecord">
+			<generatedKey column="id" sqlStatement="mysql" identity="true" />
+		</table>
+
 
 
 
