@@ -2,406 +2,410 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-	<!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
-	<!--<classPathEntry -->
-	<!--location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/> -->
-	<context id="context1" targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl" introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
-		<property name="javaFileEncoding" value="UTF-8" />
-		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
-		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-			<property name="searchString" value="Example$" />
-			<property name="replaceString" value="Condition" />
-		</plugin>
-		<plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin" />
-		<plugin type="com.generator.plugin.MysqlPagingPlugin" />
-		<plugin type="com.generator.plugin.TinyintToIntegerPlugin" />
-		<plugin type="com.generator.plugin.CommentPlugin">
-			<!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
-			<!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
-		</plugin>
+    <!-- 如果驱动在classpath下，例如通过maven依赖进来，则可以不在这里指定驱动位置 -->
+    <!--<classPathEntry -->
+    <!--location="D:\maven-repository\aliyun\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/> -->
+    <context id="context1" targetRuntime="org.mybatis.generator.codegen.mybatis3.NoMergeIntrospectedTableMyBatis3Impl"
+             introspectedColumnImpl="com.generator.plugin.MyIntrospectedColumn">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Condition"/>
+        </plugin>
+        <plugin type="com.generator.plugin.RenameExampleAndPrimaryKeyPlugin"/>
+        <plugin type="com.generator.plugin.MysqlPagingPlugin"/>
+        <plugin type="com.generator.plugin.TinyintToIntegerPlugin"/>
+        <plugin type="com.generator.plugin.CommentPlugin">
+            <!-- 制定java bean的作者，默认情况下会读取计算机当前用户作为作者 -->
+            <!--<property name="modelClassAuthor" value="xianwen.tan" /> -->
+        </plugin>
 
-		<commentGenerator>
-			<!-- 不生成原生的注解信息 -->
-			<property name="suppressAllComments" value="true" />
-		</commentGenerator>
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.14/krplus2" userId="db-test" password="123456" />
+        <commentGenerator>
+            <!-- 不生成原生的注解信息 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.14/krplus2" userId="db-test" password="123456"/>
 
-		<javaTypeResolver>
-			<property name="forceBigDecimals" value="false" />
-		</javaTypeResolver>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
 
-		<javaModelGenerator targetPackage="" targetProject="">
-			<property name="enableSubPackages" value="true" />
-			<property name="trimStrings" value="true" />
-		</javaModelGenerator>
+        <javaModelGenerator targetPackage="" targetProject="">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="" targetProject="" />
+        <sqlMapGenerator targetPackage="" targetProject=""/>
 
-		<javaClientGenerator targetPackage="" targetProject="" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="" targetProject="" type="XMLMAPPER"/>
 
-		<!-- krplus2库所有表  -->
-		<table tableName="company" domainObjectName="Company">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
-			<columnOverride column="finance_phase" javaType="com.kr.rong.enums.finance.CompanyFinancePhase"></columnOverride>
-			<columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
-			<columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
-			<columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
-			<columnOverride column="company_type" javaType="com.kr.rong.enums.company.CompanyTypeEnum"></columnOverride>
-		</table>
-		<table tableName="company_audit" domainObjectName="CompanyAudit">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="status" javaType="com.krplus.enums.AuditStatus" />
-			<columnOverride column="source" javaType="com.krplus.company.enums.CompanySource" />
-		</table>
-		<table tableName="company_product" domainObjectName="CompanyProduct">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-		<table tableName="company_tag" domainObjectName="CompanyTag" />
-		<table tableName="company_profile" />
-		<table tableName="company_access_rank" domainObjectName="CompanyAccessRank">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyAccessRankTypeEnum" />
-		</table>
+        <!-- krplus2库所有表  -->
+        <table tableName="company" domainObjectName="Company">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="industry" javaType="com.kr.rong.enums.industry.CompanyIndustry"></columnOverride>
+            <columnOverride column="finance_phase" javaType="com.kr.rong.enums.finance.CompanyFinancePhase"></columnOverride>
+            <columnOverride column="status" javaType="com.kr.rong.enums.company.CompanyStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.kr.rong.enums.company.CompanySource"></columnOverride>
+            <columnOverride column="operation_status" javaType="com.kr.rong.enums.company.CompanyOperationStatus"></columnOverride>
+            <columnOverride column="company_type" javaType="com.kr.rong.enums.company.CompanyTypeEnum"></columnOverride>
+        </table>
+        <table tableName="company_audit" domainObjectName="CompanyAudit">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.krplus.enums.AuditStatus"/>
+            <columnOverride column="source" javaType="com.krplus.company.enums.CompanySource"/>
+        </table>
+        <table tableName="company_product" domainObjectName="CompanyProduct">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="company_tag" domainObjectName="CompanyTag"/>
+        <table tableName="company_profile"/>
+        <table tableName="company_access_rank" domainObjectName="CompanyAccessRank">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyAccessRankTypeEnum"/>
+        </table>
 
-		<table tableName="company_event" domainObjectName="CompanyEvent">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-		<table tableName="company_event_record" domainObjectName="CompanyEventRecord">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-		<table tableName="company_intention" domainObjectName="CompanyIntention">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyIntentionTypeEnum" />
-		</table>
+        <table tableName="company_event" domainObjectName="CompanyEvent">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="company_event_record" domainObjectName="CompanyEventRecord">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+        <table tableName="company_intention" domainObjectName="CompanyIntention">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyIntentionTypeEnum"/>
+        </table>
 
-		<table tableName="visit">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType" />
-			<columnOverride column="source" javaType="com.krplus.enums.source.VisitSource" />
-		</table>
+        <table tableName="visit">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"/>
+            <columnOverride column="source" javaType="com.krplus.enums.source.VisitSource"/>
+        </table>
 
-		<table tableName="user" domainObjectName="User">
-			<!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
-			<columnOverride column="is_display_weixin" javaType="java.lang.Boolean" />
-			<columnOverride column="is_email_activate" javaType="java.lang.Boolean" />
-			<columnOverride column="coinvestor_type" javaType="com.kr.rong.enums.CoinvestorType" />
-			<columnOverride column="lead_investor_type" javaType="com.kr.rong.enums.LeadInvestorType" />
-			<ignoreColumn column="invest_money_begin" />
-			<ignoreColumn column="invest_money_end" />
-			<ignoreColumn column="invest_money_unit" />
-			<ignoreColumn column="org_money_begin" />
-			<ignoreColumn column="org_money_end" />
-			<ignoreColumn column="org_money_unit" />
-			<ignoreColumn column="is_invest_first_phase" />
-			<ignoreColumn column="is_invest_second_phase" />
-			<ignoreColumn column="is_invest_third_phase" />
-			<ignoreColumn column="is_realname" />
-		</table>
-		<table tableName="user_privilege" domainObjectName="UserPrivilege">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
+        <table tableName="user" domainObjectName="User">
+            <!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+            <columnOverride column="is_display_weixin" javaType="java.lang.Boolean"/>
+            <columnOverride column="is_email_activate" javaType="java.lang.Boolean"/>
+            <columnOverride column="coinvestor_type" javaType="com.kr.rong.enums.CoinvestorType"/>
+            <columnOverride column="lead_investor_type" javaType="com.kr.rong.enums.LeadInvestorType"/>
+            <ignoreColumn column="invest_money_begin"/>
+            <ignoreColumn column="invest_money_end"/>
+            <ignoreColumn column="invest_money_unit"/>
+            <ignoreColumn column="org_money_begin"/>
+            <ignoreColumn column="org_money_end"/>
+            <ignoreColumn column="org_money_unit"/>
+            <ignoreColumn column="is_invest_first_phase"/>
+            <ignoreColumn column="is_invest_second_phase"/>
+            <ignoreColumn column="is_invest_third_phase"/>
+            <ignoreColumn column="is_realname"/>
+        </table>
+        <table tableName="user_privilege" domainObjectName="UserPrivilege">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
         <table tableName="user_likes" domainObjectName="UserLikes">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="type" javaType="com.kr.rong.enums.user.UserLikesTypeEnum" />
+            <columnOverride column="type" javaType="com.kr.rong.enums.user.UserLikesTypeEnum"/>
         </table>
         <table tableName="user_blacklist" domainObjectName="UserBlacklist">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="status" javaType="com.kr.rong.enums.BlacklistStatusEnum" />
-            <columnOverride column="freeze_type" javaType="com.kr.rong.enums.user.UserFreezeType" />
+            <columnOverride column="status" javaType="com.kr.rong.enums.BlacklistStatusEnum"/>
+            <columnOverride column="freeze_type" javaType="com.kr.rong.enums.user.UserFreezeType"/>
         </table>
-		
-		<!--创业服务 begin -->
-		<table tableName="service_provider" domainObjectName="ServiceProvider">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_item_module_sub" domainObjectName="ServiceItemModuleSub">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_item_module" domainObjectName="ServiceItemModule">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="is_default" javaType="java.lang.Boolean" />
-			<columnOverride column="sort_weight" javaType="java.lang.Float" />
-			<columnOverride column="module_type" javaType="com.kr.chuang.enums.DefaultItemModuleEnum" />
-		</table>
-		<table tableName="service_item_consult_record" domainObjectName="ServiceItemConsultRecord">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_item_city" domainObjectName="ServiceItemCity">
-		</table>
-		<table tableName="service_item" domainObjectName="ServiceItem">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
 
-		<table tableName="service_comment" domainObjectName="ServiceComment">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="is_anonymous" javaType="java.lang.Boolean" />
-		</table>
+        <!--创业服务 begin -->
+        <table tableName="service_provider" domainObjectName="ServiceProvider">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_item_module_sub" domainObjectName="ServiceItemModuleSub">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_item_module" domainObjectName="ServiceItemModule">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_default" javaType="java.lang.Boolean"/>
+            <columnOverride column="sort_weight" javaType="java.lang.Float"/>
+            <columnOverride column="module_type" javaType="com.kr.chuang.enums.DefaultItemModuleEnum"/>
+        </table>
+        <table tableName="service_item_consult_record" domainObjectName="ServiceItemConsultRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_item_city" domainObjectName="ServiceItemCity">
+        </table>
+        <table tableName="service_item" domainObjectName="ServiceItem">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_catalog" domainObjectName="ServiceCatalog">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_comment" domainObjectName="ServiceComment">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_anonymous" javaType="java.lang.Boolean"/>
+        </table>
 
-		<table tableName="service_display_order" domainObjectName="ServiceDisplayOrder">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_catalog" domainObjectName="ServiceCatalog">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_customer" domainObjectName="ServiceCustomer">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.CustomerStatusEnum" />
-			<columnOverride column="invite_status" javaType="com.kr.chuang.enums.InviteStatusEnum" />
-		</table>
+        <table tableName="service_display_order" domainObjectName="ServiceDisplayOrder">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_index" domainObjectName="ServiceIndexItem">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_act_best_provider" domainObjectName="ServiceActBestProvider">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_act_best_provider_support_record" domainObjectName="ServiceActBestProviderSupportRecord">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_customer" domainObjectName="ServiceCustomer">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.CustomerStatusEnum"/>
+            <columnOverride column="invite_status" javaType="com.kr.chuang.enums.InviteStatusEnum"/>
+        </table>
 
-		<table tableName="service_tag" domainObjectName="ServiceTag">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_index" domainObjectName="ServiceIndexItem">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_act_best_provider" domainObjectName="ServiceActBestProvider">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_act_best_provider_support_record" domainObjectName="ServiceActBestProviderSupportRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_item_tag" domainObjectName="ServiceItemTag">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
-		<table tableName="service_comment_invite_record" domainObjectName="ServiceCommentInviteRecord">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.CommentInviteRecordStatusEnum" />
-		</table>
-		<table tableName="service_invite_comment" domainObjectName="ServiceInviteComment">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.InviteCommentStatusEnum" />
-		</table>
+        <table tableName="service_tag" domainObjectName="ServiceTag">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_latest_invite_comment" domainObjectName="ServiceLatestInviteComment">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_item_tag" domainObjectName="ServiceItemTag">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+        <table tableName="service_comment_invite_record" domainObjectName="ServiceCommentInviteRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.CommentInviteRecordStatusEnum"/>
+        </table>
+        <table tableName="service_invite_comment" domainObjectName="ServiceInviteComment">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.InviteCommentStatusEnum"/>
+        </table>
 
-		<table tableName="service_op_log" domainObjectName="ServiceOpLog">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="op_type" javaType="com.kr.chuang.enums.OpTypeEnum" />
-			<columnOverride column="op_action" javaType="com.kr.chuang.enums.OpActionTypeEnum" />
-		</table>
+        <table tableName="service_latest_invite_comment" domainObjectName="ServiceLatestInviteComment">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_lightspot" domainObjectName="ServiceLightSpot">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.LightSpotStatusEnum" />
-		</table>
+        <table tableName="service_op_log" domainObjectName="ServiceOpLog">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="op_type" javaType="com.kr.chuang.enums.OpTypeEnum"/>
+            <columnOverride column="op_action" javaType="com.kr.chuang.enums.OpActionTypeEnum"/>
+        </table>
 
-		<table tableName="service_lightspot_like_record" domainObjectName="ServiceLightSpotLikeRecord">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_lightspot" domainObjectName="ServiceLightSpot">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.LightSpotStatusEnum"/>
+        </table>
 
-		<table tableName="service_act_domain" domainObjectName="ServiceActDomain">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_lightspot_like_record" domainObjectName="ServiceLightSpotLikeRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_act_domain_item" domainObjectName="ServiceActDomainItem">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainItemStatusEnum" />
-		</table>
+        <table tableName="service_act_domain" domainObjectName="ServiceActDomain">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
 
-		<table tableName="service_act_domain_comment" domainObjectName="ServiceActDomainComment">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainCommentStatusEnum" />
-		</table>
+        <table tableName="service_act_domain_item" domainObjectName="ServiceActDomainItem">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainItemStatusEnum"/>
+        </table>
 
-		<table tableName="service_like_record" domainObjectName="ServiceLikeRecord">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-		</table>
+        <table tableName="service_act_domain_comment" domainObjectName="ServiceActDomainComment">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="status" javaType="com.kr.chuang.enums.ActDomainCommentStatusEnum"/>
+        </table>
+
+        <table tableName="service_like_record" domainObjectName="ServiceLikeRecord">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+        </table>
+
+        <table tableName="service_email_confirm" domainObjectName="ServiceEmailConfirm">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="target_type" javaType="com.kr.chuang.enums.EmailConfirmTargetType"/>
+        </table>
 
 
+        <!--创业服务 end -->
 
+        <table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
+            <generatedKey column="id" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="is_verified" javaType="java.lang.Boolean"/>
+        </table>
 
-		<!--创业服务 end -->
-
-		<table tableName="wise_invited_user" domainObjectName="WiseInvitedUser">
-			<generatedKey column="id" sqlStatement="mysql" identity="true" />
-			<columnOverride column="is_verified" javaType="java.lang.Boolean" />
-		</table>
-
-		<table tableName="organization" domainObjectName="Organization">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.OrgType" />
-			<columnOverride column="source" javaType="com.krplus.org.enums.OrgSource" />
-		</table>
-		<table tableName="display_order" domainObjectName="DisplayOrder">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType" />
-			<columnOverride column="order_type" javaType="com.krplus.enums.DisplayOrderType" />
-		</table>
-
-		<table tableName="inmail" domainObjectName="Inmail2">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="Name" property="cityName"></columnOverride>
-			<columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride>
-			<ignoreColumn column="read" />
-		</table>
-		<table tableName="company_investor" domainObjectName="CompanyInvestor">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-		</table>
-		<table tableName="tag" domainObjectName="Tag">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-
-		<table tableName="past_finance" domainObjectName="PastFinance">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
-			<columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="finance_channel" javaType="com.krplus.enums.FinanceChannel"></columnOverride>
-		</table>
-		<table tableName="past_finance_participant" domainObjectName="PastFinanceParticipant">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-		</table>
-		<table tableName="past_investor" domainObjectName="PastInvestor">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
-			<columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
-			<columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
-		</table>
-		<table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="entity_type" javaType="com.kr.rong.enums.EntityType"></columnOverride>
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FinancePhase"></columnOverride>
-			<columnOverride column="invest_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="finance_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="valuation_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="invest_role" javaType="com.kr.rong.enums.finance.ParticipateInvestRole"></columnOverride>
-		</table>
-
-		<table tableName="speed_funds" domainObjectName="SpeedFunds">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<ignoreColumn column="fund_id" />
-			<ignoreColumn column="is_closed" />
-			<ignoreColumn column="is_converted" />
-		</table>
-		<table tableName="speed_bp_post" domainObjectName="SpeedBpPost">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="status" javaType="com.kr.rong.enums.speed.SpeedBpPostStatus" />
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
-			<ignoreColumn column="fund_id" />
-		</table>
-		<table tableName="speed_quick_reply" domainObjectName="SpeedQuickReply">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="type" javaType="com.kr.rong.enums.speed.SpeedQuickReplyType"></columnOverride>
-		</table>
-		<table tableName="speed_investor" domainObjectName="SpeedInvestor">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<ignoreColumn column="display_order" />
-		</table>
-		<table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
-			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
-			<ignoreColumn column="invest_value_unit" />
-			<ignoreColumn column="invest_value" />
-		</table>
-
-		<table tableName="fa_company_binding" domainObjectName="FaCompanyBinding">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FaBindingStatus"></columnOverride>
-		</table>
-
-		<table tableName="company_funds" domainObjectName="CompanyFunds">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
-			<columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
-			<columnOverride column="status" javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
-			<columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
-			<columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
-		</table>
-		<table tableName="company_funds_permission" domainObjectName="CompanyFundsPermi">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-			<columnOverride column="status" javaType="com.krplus.enums.FundPermissionStatus"></columnOverride>
-		</table>
-
-		<table tableName="company_comment" domainObjectName="CompanyComment">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-
-		<table tableName="dict_area" domainObjectName="DictArea">
-		</table>
-		<table tableName="dict_school" domainObjectName="DictSchool">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
-		
-		  <table tableName="news_report_application" domainObjectName="NewsReportApplication">
+        <table tableName="organization" domainObjectName="Organization">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="report_angle" javaType="com.kr.rong.enums.report.NewsReportAngle" />
-            <columnOverride column="audit_status" javaType="com.kr.rong.enums.report.NewsReportStatusEnum" />
+            <columnOverride column="type" javaType="com.krplus.enums.OrgType"/>
+            <columnOverride column="source" javaType="com.krplus.org.enums.OrgSource"/>
+        </table>
+        <table tableName="display_order" domainObjectName="DisplayOrder">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"/>
+            <columnOverride column="order_type" javaType="com.krplus.enums.DisplayOrderType"/>
+        </table>
+
+        <table tableName="inmail" domainObjectName="Inmail2">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="Name" property="cityName"></columnOverride>
+            <columnOverride column="code" javaType="com.shanren.controller.MyEnum"></columnOverride>
+            <ignoreColumn column="read"/>
+        </table>
+        <table tableName="company_investor" domainObjectName="CompanyInvestor">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.krplus.enums.EntityType"></columnOverride>
+            <columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
+            <columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
+        </table>
+        <table tableName="tag" domainObjectName="Tag">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+
+        <table tableName="past_finance" domainObjectName="PastFinance">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="phase" javaType="com.krplus.enums.FinancePhase"></columnOverride>
+            <columnOverride column="finance_amount_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="valuation_unit" javaType="com.krplus.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="finance_channel" javaType="com.krplus.enums.FinanceChannel"></columnOverride>
+        </table>
+        <table tableName="past_finance_participant" domainObjectName="PastFinanceParticipant">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
+        </table>
+        <table tableName="past_investor" domainObjectName="PastInvestor">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="entity_type" javaType="com.krplus.enums.EntityType"></columnOverride>
+            <columnOverride column="status" javaType="com.krplus.enums.ConfirmStatus"></columnOverride>
+            <columnOverride column="source" javaType="com.krplus.enums.Source"></columnOverride>
+        </table>
+        <table tableName="past_investment_detail" domainObjectName="PastInvestmentDetail">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="entity_type" javaType="com.kr.rong.enums.EntityType"></columnOverride>
+            <columnOverride column="phase" javaType="com.kr.rong.enums.finance.FinancePhase"></columnOverride>
+            <columnOverride column="invest_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="finance_amount_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="valuation_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="invest_role" javaType="com.kr.rong.enums.finance.ParticipateInvestRole"></columnOverride>
+        </table>
+
+        <table tableName="speed_funds" domainObjectName="SpeedFunds">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <ignoreColumn column="fund_id"/>
+            <ignoreColumn column="is_closed"/>
+            <ignoreColumn column="is_converted"/>
+        </table>
+        <table tableName="speed_bp_post" domainObjectName="SpeedBpPost">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.kr.rong.enums.speed.SpeedBpPostStatus"/>
+            <columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+            <ignoreColumn column="fund_id"/>
+        </table>
+        <table tableName="speed_quick_reply" domainObjectName="SpeedQuickReply">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="type" javaType="com.kr.rong.enums.speed.SpeedQuickReplyType"></columnOverride>
+        </table>
+        <table tableName="speed_investor" domainObjectName="SpeedInvestor">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <ignoreColumn column="display_order"/>
+        </table>
+        <table tableName="speed_funds_detail" domainObjectName="SpeedFundsDetail">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+            <columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="status" javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
+            <ignoreColumn column="invest_value_unit"/>
+            <ignoreColumn column="invest_value"/>
+        </table>
+
+        <table tableName="fa_company_binding" domainObjectName="FaCompanyBinding">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.kr.rong.enums.finance.FaBindingStatus"></columnOverride>
+        </table>
+
+        <table tableName="company_funds" domainObjectName="CompanyFunds">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="phase" javaType="com.kr.rong.enums.finance.FundsPhase"></columnOverride>
+            <columnOverride column="fund_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="invest_value_unit" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
+            <columnOverride column="status" javaType="com.kr.rong.enums.finance.FundsStatus"></columnOverride>
+            <columnOverride column="type" javaType="com.kr.rong.enums.finance.FundsType"></columnOverride>
+            <columnOverride column="privilage" javaType="com.kr.rong.enums.PermissionLevel"></columnOverride>
+        </table>
+        <table tableName="company_funds_permission" domainObjectName="CompanyFundsPermi">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="status" javaType="com.krplus.enums.FundPermissionStatus"></columnOverride>
+        </table>
+
+        <table tableName="company_comment" domainObjectName="CompanyComment">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+
+        <table tableName="dict_area" domainObjectName="DictArea">
+        </table>
+        <table tableName="dict_school" domainObjectName="DictSchool">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
+
+        <table tableName="news_report_application" domainObjectName="NewsReportApplication">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+            <columnOverride column="report_angle" javaType="com.kr.rong.enums.report.NewsReportAngle"/>
+            <columnOverride column="audit_status" javaType="com.kr.rong.enums.report.NewsReportStatusEnum"/>
         </table>
 
         <table tableName="company_demoday" domainObjectName="CompanyDemoDay">
             <generatedKey column="id" identity="true" sqlStatement="mysql"/>
-            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyDemodayStatus" />
+            <columnOverride column="type" javaType="com.kr.rong.enums.company.CompanyDemodayStatus"/>
         </table>
-         <table tableName="investor_settings" domainObjectName="InvestorSettings">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+        <table tableName="investor_settings" domainObjectName="InvestorSettings">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="main_invest_currency" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
             <columnOverride column="year_invest_currency" javaType="com.kr.rong.enums.CurrencyUnit"></columnOverride>
         </table>
 
         <table tableName="krlass_item" domainObjectName="KrlassItem">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-        
+
         <table tableName="activity_company_letter" domainObjectName="ActivityCompanyLetter">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-		<table tableName="user_binding" domainObjectName="UserBind">
-			<generatedKey column="id" identity="true" sqlStatement="mysql" />
-		</table>
+        <table tableName="user_binding" domainObjectName="UserBind">
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
+        </table>
 
         <!-- 路演功能相关表  -->
         <table tableName="roadshow_reply" domainObjectName="RoadshowReply">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
         <table tableName="roadshow_comment" domainObjectName="RoadshowComment">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <columnOverride column="video_time" javaType="Integer"></columnOverride>
         </table>
         <table tableName="roadshow" domainObjectName="Roadshow">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
             <!-- <columnOverride column="permission" javaType="com.kr.rong.enums.roadshow.RoadshowPermission"></columnOverride> -->
             <columnOverride column="status" javaType="com.kr.rong.enums.roadshow.RoadshowStatus"></columnOverride>
             <columnOverride column="roadshow_type" javaType="com.kr.rong.enums.roadshow.RoadshowType"></columnOverride>
         </table>
-        
+
         <!-- 客户端版本List -->
         <table tableName="app_version" domainObjectName="AppVersion">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-        
+
         <!-- 用户被评论的数据 -->
         <table tableName="user_company_comment" domainObjectName="UserCompanyComment">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-        
+
         <!-- 用户被赞的数据 -->
         <table tableName="user_company_comment_like" domainObjectName="UserCompanyCommentLike">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
 
         <!-- 用户CRM标签 -->
         <table tableName="user_crm_tag" domainObjectName="UserCrmTag">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
 
         <!-- 用户私信快捷回复 -->
         <table tableName="sixin_quick_reply" domainObjectName="SixinQuickReply">
-            <generatedKey column="id" identity="true" sqlStatement="mysql" />
+            <generatedKey column="id" identity="true" sqlStatement="mysql"/>
         </table>
-	</context>
+    </context>
 </generatorConfiguration>
